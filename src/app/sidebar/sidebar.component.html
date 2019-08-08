@@ -1,0 +1,85 @@
+  <!-- Start Conent -->
+  <header class="body-content" *ngIf="id">
+      <div class="container">
+          <div class="row" >
+              <div class="col-lg-3 col-xs-12 sidebar" >
+                  <div class="sidebar-container wow fadeInRight" data-wow-duration='2s' data-wow-delay='2'>
+                      <div id="accordion-one">
+                          <div class="card">
+                              <div class="card-header" id="accordion1">
+                                  <h5 data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                      {{'section' | translate}}
+                                  </h5>
+                                  <i class="fa fa-chevron-down"></i>
+                              </div>
+
+                              <div id="collapseOne" class="collapse show" aria-labelledby="accordion1" data-parent="#accordion">
+                                  <div class="card-body">
+                                      <ul class="list-unstyled">
+
+                                          <li class="hvr-underline-reveal" *ngIf="role=='client'">
+                                              <a   routerLink="/user-profile/{{id}}" routerLinkActive="active2">{{'profile' | translate}}</a>
+                                          </li>
+                                          <li class="hvr-underline-reveal" *ngIf="role=='provider'">
+                                              <a  [routerLink]="['/provider-profile',{id:id,provider_id:provider_id}]" routerLinkActive="active2">{{'profile' | translate}}</a>
+                                          </li>
+
+                                          <li class="hvr-underline-reveal">
+                                              <a   routerLink="/user-conversation" routerLinkActive="active2">{{'conversations' | translate}}</a>
+                                          </li>
+                                          <li>
+                                              <div class="card">
+                                                  <div class="card-header2" id="headingTwo">
+                                                      <h6 class="sub-title" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                          {{'order' | translate}}
+                                                      </h6>
+                                                      <i class="fa fa-chevron-down"></i>
+                                                  </div>
+                                                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                      <div class="card-body">
+                                                          <ul class="list-unstyled sublist">
+
+
+                                                              <li class="hvr-underline-reveal">
+                                                                  <a routerLink="/current-orders" routerLinkActive="active2">{{'current_service' | translate}}</a></li>
+
+                                                              <li class="hvr-underline-reveal">
+
+
+                                                                  <a   routerLink="/old-orders" routerLinkActive="active2">{{'old_service' | translate}}</a>
+                                                              </li>
+
+                                                          </ul>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </li>
+                                          <li class="hvr-underline-reveal"><a routerLink="/support-home" routerLinkActive="active2">{{'tech' | translate}}</a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+                <div class="col-lg-9 col-xs-12" >
+                	<div class="content">
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Content -->
+
+    <!-- Start Conent -->
+ 
+    <!-- End Content -->
+
+
+
+
+
+
+

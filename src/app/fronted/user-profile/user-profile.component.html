@@ -1,0 +1,126 @@
+<style type="text/css">
+    .star {
+        font-size: 1.5rem;
+        color: #ffa200
+    }
+
+</style>
+
+
+<ngx-spinner bdColor="rgba(70,70,70,70.70)">
+
+    <p style="font-size: 20px; color: white">{{'loading'|translate}}</p>
+</ngx-spinner>
+<div class="profile">
+    <!-- Start User Information -->
+
+    <div class="row">
+        <div class="col-md-8 col-md-8 col-xs-12">
+            <div class="user-info">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img" *ngIf="user2.user_photo">
+                            <img [src]="user2.user_photo" alt="" />
+                            <div class="file btn btn-lg btn-primary hvr-shadow">
+                                {{'edit'|translate}} <input type="file" name="profileImage" (change)="onFileChanged($event)" #fileInput class="file btn btn-lg btn-primary hvr-shadow" />
+                            </div>
+                        </div>
+                        <div class="profile-img" *ngIf="!user2.user_photo">
+                            <img class='img-fluid' src="assets/imgs/all-sections/user.png" alt="" />
+                            <div class="file btn btn-lg btn-primary hvr-shadow">
+                                {{'edit'|translate}}
+                                <input type="file" name="profileImage" (change)="onFileChanged($event)" #fileInput />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h2>
+                            <p>{{user1.Name}}</p>
+                        </h2>
+                        <div class="location">
+                            <i class="fa fa-map-marker"></i>
+                                <span *ngIf="lang =='ar'">{{country.name_ar}}</span>
+                            <span *ngIf="lang =='en'">{{country.name_en}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+            <div class="edit-file">
+                <i class="fa fa-pencil"></i>
+                <a routerLink="/update-user/{{user1.id}}" routerLinkActive="active">{{'edit-profile'|translate}} </a>
+            </div>
+        </div>
+    </div>
+    <!-- End User Information -->
+
+
+
+
+    <!-- Start Statistics -->
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="work-states">
+                <p><span>{{user2.count_of_opend_services}}</span> {{'opend_services'|translate}} </p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="work-states">
+                <p><span>{{user2.count_of_closed_services}}</span> {{'closed_services'|translate}} </p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="work-states">
+                <p><span>{{user2.count_of_processing_services}}</span> {{'processing_services'|translate}} </p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="work-states">
+
+                <p><span>{{user2.count_of_refused_services}}</span>{{'refused_services'|translate}} </p>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+
+
+
+
+
+    <div class="row">
+            <div class="col-12">
+              <h2>{{'personal-data'|translate}}</h2>
+            </div>
+             <div class="col-lg-12 col-md-6 col-xs-12">
+                <div class="work-states">
+
+                    <p>
+                      <span>{{'email'|translate}}</span>
+                    {{user2.email}}</p>
+                </div>
+            </div>
+              <div class="col-lg-12 col-md-6 col-xs-12">
+                <div class="work-states">
+
+                    <p *ngIf="user1.gender=='male'"><span >{{'gender'|translate}}</span>{{'male'|translate}}  </p>
+                   <p *ngIf="user1.gender=='female'"><span >{{'gender'|translate}} </span>{{'female'|translate}} </p>
+
+                </div>
+            </div>
+
+             <div class="col-lg-12 col-md-6 col-xs-12">
+                <div class="work-states">
+
+                    <p><span >{{'phone'|translate}}</span>{{user2.phoneNumber}} </p>
+                </div>
+            </div>
+
+        </div>
+    <!-- End Statistics -->
+</div>

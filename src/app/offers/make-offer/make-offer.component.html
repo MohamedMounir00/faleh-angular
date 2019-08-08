@@ -1,0 +1,57 @@
+ <div class="edit-user-page">
+
+ 	<ngx-spinner
+         bdColor="rgba(70,70,70,70.70)">
+
+         <p style="font-size: 20px; color: white">{{'loading'|translate}}</p>
+       </ngx-spinner>
+                       <div class="row">
+                        <div class="col-lg-12"> 
+
+		<div class="alert alert-warning alert-dismissible fade show" role="alert" *ngFor="let person of errors"
+			dismiss-on-timeout="20">
+			<strong>{{person}}</strong>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+  <form #userForm="ngForm" novalidate (ngSubmit)="onchange()"> 
+
+
+  <div class="form-group">
+			<label for="offer_value">{{'offer-value'|translate}}</label>
+			<input type="number"  required #offer_value="ngModel" [class.is-invalid]="offer_value.invalid && offer_value.touched" class="form-control" id="offer_value" aria-describedby="offer_value" placeholder="{{'offer-value'|translate}}" [(ngModel)]="MakeOfferValue.offer_value" name="offer_value">
+			<div *ngIf="offer_value.errors && (offer_value.invalid || offer_value.touched)">
+
+			</div>
+		</div>
+
+
+
+
+	<div class="form-group">
+			<label for="offer_description">{{'desc'|translate}}</label>
+			<textarea name="offer_description" class="form-control" id="offer_description" rows="3"  name="offer_description" [(ngModel)]="MakeOfferValue.offer_description" required #offer_description="ngModel" [class.is-invalid]="offer_description.invalid && offer_description.touched"></textarea>
+<div *ngIf="offer_description.errors && (offer_description.invalid || offer_description.touched)">
+
+			</div>
+		</div>
+
+
+			           <div class="form-group">
+					      <label ></label>
+						<input type="file" class="form-control-file" name="offer_file_url[]"  multiple  (change)="   readUrl('offer_file_url[]', $event)" #fileInput>
+
+							<img  class="avtar" *ngFor='let item of urls; let i = index' src="https://cdn.fileinfo.com/img/fv/file_viewer_android.png" height="130" (click)="deleteFileDetailsnew(i)" style="display: inline;"> <br/>
+
+						
+					</div>
+
+
+
+  <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-primary hvr-shadow">{{'save'|translate}}</button>
+</form>
+</div>
+</div>
+</div>

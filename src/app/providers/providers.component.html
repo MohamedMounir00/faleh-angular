@@ -1,0 +1,108 @@
+<style type="text/css">
+
+.star {
+  font-size: 1.5rem;
+  color: #ffa200
+}
+
+</style>
+<div class="profile">
+
+ <div class="period">
+<div style="width: 150px;
+    margin-top: 20px; padding-left: 10px;display: inline-block;margin-left: 10px" >
+<label>{{'delivery'|translate}}</label>
+
+    <select class="form-control pup-sel custom-select" name="{{delivery}}" [ngModel]="delivery" (change)="Provider_filter2($event.target.value)">
+
+        <option value="0"> {{'no'|translate}}</option>
+        <option value="1"> {{'yes'|translate}}</option>
+
+</select>
+</div>
+
+
+<div style="width: 150px;
+    margin-top: 20px; padding-left: 10px;display: inline-block;margin-left: 10px" >
+<label>{{'payment_method'|translate}}</label>
+    <select  class="form-control pup-sel custom-select" name="{{payment_method}}" [ngModel]="payment_method" (change)="Provider_filter($event.target.value)">
+
+        <option value="cash"> {{'cash'|translate}}</option>
+        <option value="credit_card"> {{'credit_card'|translate}}</option>
+        <option value="cash_visa"> {{'cash_visa'|translate}}</option>
+
+</select>
+</div>
+<div style="width: 150px;
+    margin-top: 20px; padding-left: 10px;display: inline-block;margin-left: 10px" >
+<label>{{'rating'|translate}}</label>
+
+    <select class="form-control pup-sel custom-select" name="{{rate}}" [ngModel]="rate" (change)="Provider_filter3($event.target.value)">
+
+        <option [value]="1" >{{'hige'|translate}}</option>
+    <option [value]="0">{{'low'|translate}}</option>
+
+</select>
+</div>
+
+</div>
+
+  <ngx-spinner
+  bdColor="rgba(70,70,70,70.70)">
+
+  <p style="font-size: 20px; color: white">{{'loading'|translate}}</p>
+</ngx-spinner>
+<div *ngFor="let item of providers  | paginate: { itemsPerPage: 10, currentPage: p }">
+
+    <!-- Start Previous Requests -->
+    <hr>
+    <div class="row" >
+        <div class="col-lg-10 col-md-10">
+            <div class="req-info">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="assets/imgs/all-sections/user.png" alt="" *ngIf="!item.user_photo">
+                        <img src="{{item.user_photo}}" alt="" *ngIf="item.user_photo">
+
+                    </div>
+                    <div class="col-md-10">
+                        <h2> <a  class="nav-link" [routerLink]="['/provider-profile',{id:item.id,provider_id:item.provider_id}]" routerLinkActive="active"><i class="fa fa-circle" style="color: green;font-size: 12px" aria-hidden="true"></i> {{item.User_Name}} </a>
+
+
+                        </h2>
+                        <div class="location">
+                            <i class="fa fa-map-marker"></i>
+                            <span style="font-weight: bold;">{{item.country}}-</span>
+                            <span> {{'remot_me'|translate}}({{item.distance}} {{'km'|translate}})</span>
+                        </div>
+                        <div class="star-rate">
+                          <ngb-rating  class="star" [(rate)]="item.stars" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-2 col-md-2">
+        <div class="period">
+            <button type="button" class="btn btn-primary hvr-shadow" (click)="sendToProvider(item.provider_id)">{{'send'|translate}}</button>
+        </div>
+    </div>
+
+
+</div>
+<!-- Start Previous Requests -->
+
+<hr>
+
+</div>
+<br>
+    <pagination-controls
+     (pageChange)="p = $event"
+      previousLabel="{{'previous'|translate}}"
+     nextLabel="{{'next'|translate}}"
+
+    ></pagination-controls>
+
+</div>

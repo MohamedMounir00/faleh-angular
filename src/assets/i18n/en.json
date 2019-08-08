@@ -1,0 +1,197 @@
+{
+	
+	"Title": "Faleh",
+	"Intro": "Hello I am Arthur, I am 42 years old.",
+	"new_services":" New Order",
+	"profile": " My Profile",
+	"old_service": " Old Order",
+	"current_service": "Current Order",
+	"conversations": "Conversations",
+	"logout": "Logout",
+	"login": "Login",
+	"new_provider":"New Provider",
+	"new_user": "New User",
+	"ar": "Arabic ",
+	"en": "English ",
+	"order": "Orders ",
+	"tech": "Technical support",
+	"no_order": "No Order Yet ",
+	"right_save": " Copyright © 2018 Faleh Information Technology Company. All rights reserved",
+	"condatin": "  Terms of Service",
+	"tem_work": " Staff ",
+	"how_work": "   How it works ?",
+	"about_faleh": " About Faleh",
+	"section": " Section",
+	"all_section": " All Section",
+	"no_chat":"There are no conversations  yet",
+	"details":"Order details",
+	"status":" Status Of Order",
+	"rating":" Rating",
+	"recipts":"Recipts",
+	"add-issue":"complaint",
+	"more":"More",
+	"get-providers":"Send TO Provider",
+	"make-offer":"Please submit an offer",
+	"offer":" Offers",
+	"refused-order":" Rejection Order",
+	"accept-order":" Accept Order",
+	"loading":" Loading ...",
+	"no-offers":" No offers have been made yet",
+	"save":"Save",
+	"edit":"Edit",
+	"send":"Send",
+	"Start":"Start Recording",
+	"Stop":"Stop Recording",
+	"lang":"language",
+	"edit-offer":"Edit Offer",
+	"refused":"Refused",
+	"accept":"Accept",
+	"comment":"Comment",
+	"accpet-order-alert":"Your request has been successfully accepted",
+	"write-issue":"Write your complaint",
+	"opened":"New",
+	"waiting":"Waiting",
+	"processing":"Processing",
+	"closed":"Closed",
+	"refusedd":"Refused",
+	"no-provider":"No service provider selected yet",
+	"password":"Password",
+	"email":"Email",
+	"register-provider":"Create a service provider account",
+	"name":"Name",
+	"phone":"Mobile number",
+	"password_confirmation":"confirm password",
+	"Bank_name":"Bank name",
+	"categories":"Categories",
+	"nationality":"Nationality",
+	"studeyLevels":"Qualifications",
+	"gender":"Gender",
+	"male":"Male",
+	"female":"Female",
+	"payment_method":"Payment method",
+	"cash":"Cash",
+	"credit_card":"Visa",
+	"cash_visa":"Cash and Visa",
+	"delivery":"Delivery ",
+	"no":"No",
+	"yes":"Yes",
+	"bio":"Bio",
+	"last_works":"Other works",
+	"facebook":"Facebook",
+	"LinLinkedInkedIn":"LinkedIn",
+	"register":"Register",
+	"bank_account":"IBAN",
+	"register-student":"Create a Student Service Account",
+	"edit-profile":" Edit profile",
+	"opend_services":"New Order",
+	"closed_services":"Done Order",
+	"processing_services":"Processing Order",
+	"refused_services":"Refused Order",
+	"oppen":"Published ",
+	"close":"UnPublished ",
+	"upload-issue":"Your complaint has been filed and we will reply to you soon",
+	"updated-profile":"Profile successfully edited",
+	"offer-value":"Offer Value",
+	"desc":"Description",
+	"maked-offer":"Offer successfully submitted",
+	"number-offer":"Its value must be numbers",
+	"refused-offer-done":"Offer rejected",
+	"accpet-offer-done":"Offer accepted successfully",
+	"service_id":"Order number",
+	"total_price":"Total price",
+	"value_added":"Value Added",
+	"user_name":"Name of service provider",
+	"offer_photo":"Attachments",
+	"percentage_company":"Percentage company",
+	"recipts_id":"bill number",
+
+	"date":"Date created",
+	"refused_reason":"the reason of refuse",
+	"subcategories":"Select a sub-section",
+	"maincategories":"Choose a main section",
+	"message":"Write your message",
+	"print":"Print",
+	"add-order":"Request successfully uploaded",
+	"location-required":"Please choose a location",
+	"confirm-pass":"The password does not match",
+	"invent-provider":"Your service provider has been successfully invited",
+	"loading_order":"Please wait while files and audio are being uploaded",
+	"remot_me":"Is away from you",
+	"back":"back",
+	"discount":"If the order is rejected, the invoice will be charged to you",
+	"online":"Online",
+	"offline":"Offline",
+	"show-more":"More",
+	"show-less":"Less",
+	"serch":"search",
+	"low":"the least",
+	"hige":"the above",
+	"offer_value_not":"The service provider has changed its display value",
+	"can-no-edit-offer":"You can not edit the view",
+	"refused-order-alert":"Offer rejected successfully",
+	"edit-offer-done":"Offer successfully updated",
+	"client":"Client",
+	"provider":"Provider",
+	"error":"You do not have permission to enter this page",
+	"home":"Back To Home Page",
+	"km":"KM",
+	"personal-data":"Personal data",
+	"chosse-file":"choose a file",
+	"download":"Download the app now",
+	"previous":"Previous",
+	"next":"Next",
+	"first_name":"First Name",
+	"last_name":"Last Name",
+	"faleh_services_current":"Faleh for student and business services - current order",
+	"faleh_services_old":"Faleh for student and business services - old order",
+	"faleh_services_conversations":"Faleh for student and business services - conversations",
+	"faleh_services_new_order":"Faleh for student and business services - new order",
+	"faleh_services_order_details":"Faleh for student and business services -  order details",
+	"faleh_services_refused_order":"Faleh for student and business services - refused order ",
+	"faleh_services_accept_order":"Faleh for student and business services - accept order ",
+	"faleh_services_offer_details":"Faleh for student and business services - offer details ",
+	"faleh_services_user_profile":"Faleh for student and business services - user profile ",
+	"faleh_services_provider_profile":"Faleh for student and business services - provider profile ",
+	"faleh_services_recipts":"Faleh for student and business services - recipts  ",
+	"faleh_services_provider":"Faleh for student and business services - providers  ",
+	"faleh_services_main_sections":"Faleh for student and business services - main sections  ",
+	"faleh_services_sub_sections":"Faleh for student and business services - sub sections  ",
+	"faleh_services_main":"Faleh for student and business services - main  ",
+	"faleh_services_tech":"Faleh for student and business services - Technical support",
+	"faleh_services_edit":"Faleh for student and business services -  edit profile",
+	"faleh_services_edit_offer":"Faleh for student and business services -  edit offer",
+	"faleh_services_make_offer":"Faleh for student and business services -  make offer"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,94 @@
+
+<!-- Start Navigation Bar -->
+<nav class="navbar navbar-expand-lg log-in" >
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="assets/imgs/all-sections/logo.svg" alt="">
+        </a>
+
+        <i class="fa fa-navicon fa-2x navbar-toggle" data-toggle="collapse" data-target="#NAV" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></i>
+
+        <div class="collapse navbar-collapse" id="NAV">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item talking">
+                    <a class="nav-link hvr-underline-reveal"routerLink="" >الرئيسية</a>
+                </li>
+
+
+
+
+          
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Navigation Bar -->                  
+ <div class="login" >
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-12">
+                                <div class="content">
+
+                  <router-outlet></router-outlet>
+</div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- End Footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-12">
+                <div class="logo">
+                    <a href="#">
+                        <img class="img-responsive" src="assets/imgs/index/logo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="social">
+                    <ul class="list-unstyled">
+                        <li><a href="{{links.google}}"><i class="fa-1 fa fa-google-plus" title="Google Plus">
+                            
+                        </i></a></li>
+                        <li><a href="{{links.facebook}}"><i class="fa-2 fa fa-facebook" title="Facebook"></i>
+                        </a>
+                        </li>
+                        <li> <a href="{{links.twitter}}"> <i class="fa-3 fa fa-twitter" title="Twitter"></i></a></li>
+                    </ul>
+                </div>
+                <div class="links">
+                    <ul class="list-unstyled">
+                        <li><a routerLink="/about-faleh" routerLinkActive="active1">عن فالح</a></li>
+
+                        <li><a  routerLink="/support" routerLinkActive="active1">الدعم</a></li>
+                        <li><a  routerLink="/terms-of-service" routerLinkActive="active1">شروط الخدمة</a></li>
+                        <li><a  routerLink="/staff" routerLinkActive="active1">فريق العمل</a></li>
+                        <li><a  routerLink="/how-it-works" routerLinkActive="active1">كيف نعمل</a></li>
+                    </ul>
+                </div>
+                <p> جميع الحقوق محفوظة لدى شركة وادي الخبراء لتقنيةالمعلومات صاحبة العلامة التجارية فالح © 2018</p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <div class="download-section text-center">
+                    <h3>قم بتحميل التطبيق الأن</h3>
+                    <div class="chevron"><i class="fa fa-chevron-down fa-2x"></i></div>
+                    <a href="https://itunes.apple.com/gb/app/faleh/id1444336867"><img class="img-fluid" src="assets/imgs/index/apple_store.svg" alt=""></a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.ev.phaleh"><img class="img-fluid" src="assets/imgs/index/google_play.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="phones">
+                    <img class="img-fluid text-center" src="assets/imgs/index/mobila_application_footer.png" alt="">
+                </div>
+            </div>
+            <span class="hidden"> جميع الحقوق محفوظة لدى شركة وادي الخبراء لتقنيةالمعلومات صاحبة العلامة التجارية فالح © 2018</span>
+        </div>
+    </div>
+</div>

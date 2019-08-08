@@ -1,0 +1,59 @@
+<div class="edit-user-page">
+        <ngx-spinner
+         bdColor="rgba(70,70,70,70.70)">
+
+         <p style="font-size: 20px; color: white">{{'loading'|translate}}</p>
+       </ngx-spinner>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="container">
+                <form #userForm="ngForm" novalidate (ngSubmit)="onchange()">
+
+
+                    <div class="form-group">
+                        <label for="offer_value">{{'offer-value'|translate}}</label>
+                        <input type="number" required #offer_value="ngModel" [class.is-invalid]="offer_value.invalid && offer_value.touched" class="form-control" id="offer_value" aria-describedby="offer_value" placeholder="{{'offer-value'|translate}}" [(ngModel)]="MakeOfferValue.offer_value" name="offer_value">
+                        <div *ngIf="offer_value.errors && (offer_value.invalid || offer_value.touched)">
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label for="offer_description">{{'desc'|translate}}</label>
+                        <textarea name="offer_description" class="form-control" id="offer_description" rows="3" name="offer_description" [(ngModel)]="MakeOfferValue.offer_description"></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label></label>
+                        <input type="file" class="form-control-file" name="offer_file_url[]" multiple (change)="readUrl('offer_file_url[]', $event)" #fileInput>
+
+
+                        <img *ngFor='let item of urls; let i = index' src="https://cdn.fileinfo.com/img/fv/file_viewer_android.png" height="130" (click)="deleteFileDetailsnew(i)" style="display: inline;">
+
+                        <br />
+                        <div class="avatar" *ngFor='let url of MakeOfferValue.offer_photo' style=" display: inline;">
+                            <span *ngIf="(getExstendsion(url.url) == 'jpg') || getExstendsion(url.url) == 'jpeg'|| getExstendsion(url.url) == 'png'|| getExstendsion(url.url) == 'PNG'">
+
+                                <img (click)="deleteFileDetails(url)" [src]="url.url" alt="" style="height:40px;width: 50px ;display: inline;margin-right: 10px">
+                            </span>
+                               <span *ngIf="(getExstendsion(url.url) == 'pdf')|| getExstendsion(url.url) == 'doc'|| getExstendsion(url.url) == 'docx'|| getExstendsion(url.url) == 'xls'|| getExstendsion(url.url) == 'xlss'">
+
+                                <img (click)="deleteFileDetails(url)" src="https://cdn.fileinfo.com/img/fv/file_viewer_android.png" alt="" style="height:40px;width: 50px ;display: inline;margin-right: 10px">
+                            </span>
+                        </div>
+
+                    </div>
+
+
+
+                    <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-primary hvr-shadow">{{'edit'|translate}}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

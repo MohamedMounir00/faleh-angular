@@ -1,21 +1,27 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<router-outlet></router-outlet>
+
+<link rel="stylesheet" href="/assets/css/all-sections.css" *ngIf="!lang ||lang=='ar'">
+<link rel="stylesheet" href="/assets/css/all-sections-en.css" *ngIf="lang=='en'">
+<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/assets/css/responsive-style.css" *ngIf="!lang ||lang=='ar'">
+<link rel="stylesheet" href="/assets/css/responsive-style-en.css" *ngIf="lang=='en'">
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/animate.css">
+<link rel="stylesheet" href="/assets/css/hover.css">
+<link rel="stylesheet" href="/assets/css/lightbox.css">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700,900" rel="stylesheet">
+
+<ng-container *ngIf="this.router.url === '/login'||this.router.url === '/user-registration' ||this.router.url === '/provider-registration' ||this.router.url === '/resset-password' ||this.router.url === '/password-resset'||this.router.url === '/check' ||this.router.url === '/support' ||this.router.url === '/staff' ||this.router.url === '/how-it-works' ||this.router.url === '/terms-of-service' ||this.router.url === '/about-faleh' ; else notRoute">
+	<app-frontend ></app-frontend>
+</ng-container>
+
+
+<ng-template  #notRoute>
+<app-home *ngIf="id"></app-home>
+<app-home2 *ngIf="!id"></app-home2>
+</ng-template >
+

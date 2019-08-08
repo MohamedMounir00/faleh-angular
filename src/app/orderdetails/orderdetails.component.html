@@ -1,0 +1,151 @@
+<div class=" currently-page  completed-page">
+
+
+
+
+	<div class="row">
+
+
+
+
+
+	<ng-container *ngIf="order.status=='opened' && order.user_id!=0 ">
+		<h1 >  </h1>
+		<div *ngIf="role=='client'" class="alert alert-danger" role="alert">
+			{{'no-offers'|translate}}</div>
+	</ng-container >
+
+		<table class="table table-borderless">
+			<tbody>
+			<tr *ngFor="let item of answer">
+
+				<th *ngIf="item.type!='location'&& item.type!='file' && item.type!='sound'">{{item.question}}</th>
+
+				<td  *ngIf="item.type!='location'&& item.type!='file' && item.type!='sound'">{{item.value}}</td>
+				<th  *ngIf="item.type=='file'">
+					{{item.question}}
+				</th>
+
+
+				<th  *ngIf="item.type=='location'">
+					{{item.question}}
+				</th>
+				<th  *ngIf="item.type=='location'">
+					<agm-map [latitude]="+item.latitude_value" [longitude]="+item.longitude_value" (mapClick)="placeMarker($event)" style="height: 100px" >
+
+						<agm-marker  [latitude]="+item.latitude_valuet" [longitude]="+item.longitude_value" ></agm-marker>
+					</agm-map>
+
+				</th>
+
+   
+				<td *ngIf="item.type=='file'">
+
+					<div class="avatar" *ngFor="let l of item.value" style=" display: inline;">
+                    <span *ngIf="(getExstendsion(l.url) == 'jpg') || getExstendsion(l.url) == 'jpeg'|| getExstendsion(l.url) == 'png'|| getExstendsion(l.url) == 'PNG'">
+
+                     <a href="{{l.url}}" data-lightbox="image-1"> <img  class="img-fluid" [src]="l.url" alt=""  style="height:40px;width: 50px ;display: inline;" ></a>
+                   </span>
+						<span *ngIf="(getExstendsion(l.url) == 'pdf')|| getExstendsion(l.url) == 'doc'|| getExstendsion(l.url) == 'docx'|| getExstendsion(l.url) == 'xls'|| getExstendsion(l.url) == 'xlss'">
+                     <a href="{{l.url}}"  >
+                      <img  class="img-fluid" src="https://cdn.fileinfo.com/img/fv/file_viewer_android.png" alt=""   style="height:40px;width: 50px ;display: inline;">
+                    </a>
+                  </span >
+					</div>
+
+				</td>
+				<th *ngIf="item.type=='sound'">
+					{{item.question}}
+
+
+				</th>
+
+
+				<td  *ngIf="item.type=='sound'">
+					<div *ngFor="let l of item.value">
+
+						<audio controls=""  *ngIf="l.url" controlslist="nodownload">
+							<source [src]="sanitize(l.url)" type="audio/wav">
+						</audio>
+
+					</div>
+
+
+				</td>
+			</tr>
+
+
+
+			</tbody>
+		</table>
+			<div class="row" style="margin: auto;">
+				<ng-container *ngIf="order.status=='opened'&& order.user_id== 0 ">
+					<a routerLink="/get-providers/{{order.id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow  bt" data-dismiss="modal" aria-label="Close">{{'get-providers'|translate}}</a>
+
+				</ng-container>
+
+				<ng-container *ngIf="order.status=='opened' && order.user_id!=0 ">
+					<a *ngIf="role=='provider' " data-dismiss="modal" aria-label="Close" routerLink="/make-offer/{{order.id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow mr-2 bt">  {{'make-offer'|translate}} </a>
+
+				</ng-container >
+				<ng-container *ngIf="order.status=='waiting' ">
+					<a routerLink="/get-offers/{{order.id}}" routerLinkActive="active"class="btn btn-primary hvr-shadow  bt" data-dismiss="modal" aria-label="Close" style="padding: 9px 40px;"> {{'offer'|translate}}</a>
+				</ng-container>
+				<div *ngIf="role=='client'">
+					<div *ngIf="order.status=='processing' ">
+
+
+
+						<a routerLink="/accept-order/{{order.id}}"  routerLinkActive="active" class="btn btn-primary hvr-shadow bt" data-dismiss="modal" aria-label="Close">  {{'accept-order'|translate}} </a>
+						<a routerLink="/refused-order/{{order.id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow  bt" data-dismiss="modal" aria-label="Close"> {{'refused-order'|translate}}</a>
+					</div>
+
+				</div>
+
+
+
+
+
+				<ng-container *ngIf="order.status=='opened' && order.user_id!=0; else second">
+
+					<a routerLink="/get-messages/{{order.user_id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow bt" data-dismiss="modal" aria-label="Close">  {{'conversations'|translate}} </a>
+
+				</ng-container>
+
+
+				<ng-template #second>
+					<ng-container *ngIf="order.status=='processing'; else third">
+
+						<a routerLink="/get-messages/{{order.user_id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow bt" data-dismiss="modal" aria-label="Close">  {{'conversations'|translate}} </a>
+
+					</ng-container>
+				</ng-template>
+
+
+
+				<ng-template #third>
+					<ng-container *ngIf="order.status=='waiting'; else fourd">
+
+						<a routerLink="/get-messages/{{order.user_id}}" routerLinkActive="active"class="btn btn-primary hvr-shadow bt" data-dismiss="modal" aria-label="Close">  {{'conversations'|translate}} </a>
+
+					</ng-container>
+				</ng-template>
+
+
+
+				<ng-container *ngIf="order.status=='closed'">
+					<a routerLink="/recipts/{{order.id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow bt" data-dismiss="modal" aria-label="Close"> {{'recipts'|translate}}  </a>
+
+
+				</ng-container>
+
+				<ng-container *ngIf="order.status=='refused' && role=='provider'">
+					<a routerLink="/add-issue/{{order.id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow bt" data-dismiss="modal" aria-label="Close">{{'add-issue'|translate}}  </a>
+
+
+				</ng-container>
+			</div>
+
+
+</div>
+</div>

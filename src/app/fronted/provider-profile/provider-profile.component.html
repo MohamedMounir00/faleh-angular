@@ -1,0 +1,294 @@
+
+
+
+        <style type="text/css">
+
+        .star {
+          font-size: 1.5rem;
+          color: #ffa200
+        }
+
+        </style>
+
+
+
+        <div class="profile">
+            <!-- Start User Information -->
+                <ngx-spinner
+         bdColor="rgba(70,70,70,70.70)">
+
+         <p style="font-size: 20px; color: white">{{'loading'|translate}}</p>
+       </ngx-spinner>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <div class="user-info">
+                        <div class="row">
+
+                           <div class="col-md-4">
+                            <div class="profile-img pro-im"*ngIf="user2.user_photo">
+                                <img class="img-fluid" [src]="user2.user_photo" alt=""/>
+                                <div class="file btn btn-lg btn-primary hvr-shadow" *ngIf="role=='provider'">
+                                 {{'edit'|translate}}                             
+                                 <input type="file" name="profileImage" (change)="onFileChanged($event)" #fileInput 
+                                 />
+                             </div>
+                         </div>
+                         <div class="profile-img"*ngIf="!user2.user_photo">
+                            <img class="img-fluid" src="assets/imgs/all-sections/user.png" alt=""/>
+                            <div class="file btn btn-lg btn-primary hvr-shadow" *ngIf="role=='provider'">
+                                {{'edit'|translate}}                                 <input type="file" name="profileImage" (change)="onFileChanged($event)" #fileInput
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-xs-12">
+                        <h2>
+                            <p style="margin-bottom: 0">{{user1.Name}}</p>
+                        </h2>
+                        <div class="location">
+                            <i class="fa fa-map-marker"></i>
+                            <span *ngIf="lang =='ar'">{{country.name_ar}}</span>
+                            <span *ngIf="lang =='en'">{{country.name_en}}</span>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <div class="star-rate st" style="margin-top: 20px;">
+                         <ngb-rating  class="star" [(rate)]="user2.stars"  [readonly]="true" max="5"></ngb-rating>
+
+                     </div>
+                 </div>
+             </div>
+         </div>
+        </div>
+
+        <div class=" col-md-4 col-xs-12" *ngIf="role=='provider'">
+            <div class="edit-file">
+                <i class="fa fa-pencil"></i>
+                <a routerLink="/update-provider/{{user1.id}}" routerLinkActive="active" >{{'edit-profile'|translate}} </a>
+             
+            </div>
+        </div>
+         <div class="col col-lg-4">
+              
+            <a style="display: block;width: 130px;margin: 15px auto"  class=" btn btn-primary hvr-shadow pro-bt bb" (click)="back()" *ngIf="role=='client'" >{{'back'|translate}} </a>
+            
+         </div>
+                  
+                
+               
+        </div>
+        <!-- End User Information -->
+
+            <div class="period" *ngIf="role=='provider'">
+                    <select style="margin: 0 0 15px 0; width: 128px;padding-left: 10px" class="form-control custom-select"name="{{ss.status}}" [ngModel]="ss.status"  (change)="online($event.target.value)">
+
+                        <option [value]="1" > {{'online'|translate}} </option>
+                        <option [value]="0"> {{'offline'|translate}}  </option>
+                    </select>
+            </div>
+
+
+        <!-- Start Statistics -->
+        <!-- Start Statistics -->
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="work-states">
+                    <p><span>{{user2.count_of_opend_services}}</span> {{'opend_services'|translate}} </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="work-states">
+                    <p><span>{{user2.count_of_closed_services}}</span> {{'closed_services'|translate}} </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="work-states">
+                    <p><span>{{user2.count_of_processing_services}}</span> {{'processing_services'|translate}} </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="work-states">
+
+                    <p><span>{{user2.count_of_refused_services}}</span>{{'refused_services'|translate}} </p>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-12">
+              <h2>{{'personal-data'|translate}}</h2>
+            </div>
+            
+            
+            
+              <div class="col-lg-8 col-md-6 col-xs-12">
+                <div class="work-states">
+                    <p>
+                      <span>{{'email'|translate}}</span>
+                      {{user2.email}}
+                    </p>
+                </div>
+            </div>
+              <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="work-states">
+                    <p *ngIf="user1.gender=='male'"><span >{{'gender'|translate}}</span>{{'male'|translate}}  </p>
+                   <p *ngIf="user1.gender=='female'"><span >{{'gender'|translate}} </span>{{'female'|translate}} </p>
+
+                </div>
+            </div>
+              <div class="col-lg-8 col-md-6 col-xs-12">
+                <div class="work-states">
+
+                    <p *ngIf="user2.delivery==1"><span >{{'delivery'|translate}}</span>{{'yes'|translate}} </p>
+                    <p *ngIf="user2.delivery==0"><span >{{'delivery'|translate}}</span>{{'no'|translate}} </p>
+                </div>
+            </div>
+               <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="work-states">
+
+                    <p><span >{{'phone'|translate}}</span>{{user2.phoneNumber}} </p>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-xs-12">
+                <div class="work-states">
+
+                    <p *ngIf="user2.payment_method=='cash_visa'"><span>{{'payment_method'|translate}}</span>{{'cash_visa'|translate}} </p>
+                     <p *ngIf="user2.payment_method=='cash'"><span>{{'payment_method'|translate}}</span>{{'cash'|translate}} </p>
+                      <p *ngIf="user2.payment_method=='credit_card'"><span>{{'payment_method'|translate}}</span>{{'credit_card'|translate}} </p>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+
+
+  <div class="row">
+            <div class="col-12">
+              <h2>{{'categories'|translate}}</h2>
+            </div>
+            
+            
+            
+              <div class="col-xs-12 work-states">
+            
+                      <span class="" *ngFor="let item of categories">{{item.name}} - </span>
+                   
+            </div>
+             
+            </div>
+
+        
+
+
+
+
+
+
+
+
+        <hr>
+        <!-- Start About User -->
+
+        <!-- End About User -->
+        <div class="row" *ngIf="user2.bio?.length > 120">
+            <div class="container">
+            <div class="about" *ngIf="user2.bio">
+                <h2> {{'bio'|translate}}  </h2>
+                <div class="container23" [ngClass]="{show: show}">
+                  <p class="lead">   {{user2.bio}}</p>
+              </div>
+
+              <button class="btn btn-primary hvr-shadow tog" style="margin-top: 15px" (click)="show = true" *ngIf="show == flase">
+              {{'show-more'|translate}}</button>
+              <button class="btn btn-primary hvr-shadow tog" style="margin-top: 15px" (click)="show = flase" *ngIf="show == true">
+             {{'show-less'|translate}}</button>
+
+          
+          </div>
+        </div>
+        </div>
+      <div class="row" *ngIf="user2.bio?.length < 120">
+            <div class="container">
+            <div class="about" *ngIf="user2.bio">
+                <h2> {{'bio'|translate}}  </h2>
+                  <p class="lead">   {{user2.bio}}</p>
+
+           
+
+          
+          </div>
+        </div>
+        </div>
+        <hr>
+
+        <!-- End Statistics -->
+
+
+        <!-- Start Previous Requests -->
+        <div *ngFor="let item of comment" >
+            <hr>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="req-info">
+                        <div class="row">
+                            <div class="col-md-2" col-sm-12>
+                                <img class='img-fluid' src="assets/imgs/all-sections/user.png" alt="" *ngIf="!item.rater_photo">
+                                <img src="{{item.rater_photo}}" alt="" *ngIf="item.rater_photo">
+                            </div>
+                            <div class="col-md-10 col-sm-12" >
+                                <h2>{{item.rater_username}}</h2>
+                                <div class="location"*ngIf="item.comment.length>120" >
+
+                                 <div class="container33" [ngClass]="{show2: show2}">
+                                    <p style="font-size: 15px;font-weight: 400;line-height: 25px;" class="lead">{{item.comment}}</p>
+                              </div>
+                              <button class="btn btn-primary hvr-shadow tog" style="margin-top: 15px" (click)="show2 = true" *ngIf="show2 == flase">{{'show-more'|translate}}</button>
+                              <button class="btn btn-primary hvr-shadow tog" style="margin-top: 15px" (click)="show2 = flase" *ngIf="show2 == true">{{'show-less'|translate}}</button>
+
+
+
+                          </div>
+                             <div class="location"*ngIf="item.comment.length<120" >
+
+                                    <p style="font-size: 15px;font-weight: 400;line-height: 25px;" class="lead">{{item.comment}}</p>
+                              
+
+
+
+                          </div>
+                      </div>
+                      
+
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-3" *ngIf="role=='provider'">
+            <div class="period">
+                    <select style="width: 150px;
+    margin-top: 40px; padding-left: 10px" class="form-control pup-sel custom-select" name="{{item.open_comment}}" [ngModel]="item.open_comment" (change)="change_status(item.id,$event.target.value)">
+
+                        <option [value]="1" > {{'oppen'|translate}} </option>
+                        <option [value]="0"> {{'close'|translate}}  </option>
+                    </select>
+            </div>
+        </div>
+        </div>
+        <!-- Start Previous Requests -->
+
+        <hr>
+        </div>
+
+        </div>

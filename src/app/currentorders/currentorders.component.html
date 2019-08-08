@@ -1,0 +1,264 @@
+<style type="text/css">
+  
+    .star {
+      font-size: 1.5rem;
+      color: #ffa200
+    }
+    .gg {
+        width: 100%;
+    }
+
+</style>
+
+<div class="completed-page">
+
+ <h2 > {{'current_service' | translate}}</h2>
+    <ngx-spinner
+         bdColor="rgba(70,70,70,70.70)">
+
+         <p style="font-size: 20px; color: white">{{'loading'|translate}}</p>
+       </ngx-spinner>
+
+ <ng-container *ngIf="orders.length ==0">
+   <h5>{{'no_order' | translate}} </h5>
+
+ </ng-container>
+
+
+ <div class="row">
+
+  <!-- Start Box -->
+  <div class="col-lg-6 col-md-6 col-xs-12"  *ngFor="let item of orders">
+   <div class="box">
+
+     <div class="box-heading text-center">
+      <h3>{{item.name}}</h3>
+    </div>
+    <div class="row">
+     <div class="col-xl-3 text-xl-right col-lg-12 col-md-12 col-12 text-center">
+       <div class="box-image">
+        <img class="img-fluid"  [src]="item.user_photo" *ngIf="item.user_photo!=''">
+        <i class="fa fa-user-circle fa-2x" *ngIf="item.user_photo==''"></i>
+      </div>
+    </div>
+    <div class="col-xl-5 pl-xl-0 pr-xl-0 text-xl-right col-lg-12 col-md-12 col-12 text-center">
+     <div class="box-content">
+      <h4 *ngIf="item.provider_id==''">{{'no-provider' | translate}} </h4>
+      <h4 *ngIf="item.provider_id!=''">{{item.User_Name}} </h4>
+  
+        <span>{{'rating'|translate}} :</span>
+            <ngb-rating  class="star" style='font-size:18px' [(rate)]="item.stars" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+ 
+      
+
+
+
+    </div>
+  </div>
+  <div class="col-xl-4 text-xl-right col-lg-12 col-md-12 col-12 text-center">
+   <a class="btn btn-primary hvr-shadow" data-toggle="modal" data-target="#exampleModal"(click)="details(item.id)"> {{'details' | translate}}  </a>
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+
+        <!-- Popup Header -->
+        <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+           <i class="fa fa-close"></i>
+         </button>
+       </div>
+
+
+       <!-- Popup Body -->
+       <div class="modal-body">
+         <ngx-spinner
+         bdColor="rgba(70,70,70,70.70)">
+
+         <p style="font-size: 20px; color: white">{{'loading'|translate}}</p>
+       </ngx-spinner>
+       <ng-container *ngIf="order.status=='opened' && order.user_id!=0 ">
+         
+         <div *ngIf="role=='client'" class="alert alert-danger alert-dir" role="alert">
+         {{'no-offers'|translate}}</div>
+       </ng-container >
+
+
+       <table class="table table-borderless">
+    
+         <tbody>
+          <tr>
+            <th>{{'status'|translate}} :</th>
+            <td>
+                          <span *ngIf="order.status=='opened'">{{'opened'|translate}} </span>
+ <span *ngIf="order.status=='waiting'">{{'waiting'|translate}} </span>
+ <span *ngIf="order.status=='processing'">{{'processing'|translate}} </span>
+ <span *ngIf="order.status=='closed'">{{'closed'|translate}} </span>
+ <span *ngIf="order.status=='refused'">{{'refusedd'|translate}} </span>
+            </td>
+          </tr>
+           <tr *ngFor="let item of answer">
+
+             <th *ngIf="item.type!='location'&& item.type!='file' && item.type!='sound'">{{item.question}}</th>
+
+             <td  *ngIf="item.type!='location'&& item.type!='file' && item.type!='sound'">{{item.value}}</td>
+             <th  *ngIf="item.type=='file'">
+               {{item.question}}
+             </th>
+
+
+             <th  *ngIf="item.type=='location'">
+              {{item.question}}
+            </th>
+            <th  *ngIf="item.type=='location'">
+              <agm-map [latitude]="+item.latitude_value" [longitude]="+item.longitude_value"  style="height: 100px" >
+
+                <agm-marker  [latitude]="+item.latitude_value" [longitude]="+item.longitude_value" ></agm-marker>
+              </agm-map>
+
+            </th>
+
+
+
+            <td *ngIf="item.type=='file'">
+
+              <div class="avatar" *ngFor="let l of item.value">
+                <span *ngIf="(getExstendsion(l.url) == 'jpg') || getExstendsion(l.url) == 'jpeg'|| getExstendsion(l.url) == 'png'|| getExstendsion(l.url) == 'PNG'">
+
+                 <a href="{{l.url}}" data-lightbox="image-1" > <img  class="img-fluid" [src]="l.url" alt="" ></a>
+
+
+               </span>
+               <span *ngIf="(getExstendsion(l.url) == 'pdf')|| getExstendsion(l.url) == 'doc'|| getExstendsion(l.url) == 'docx'|| getExstendsion(l.url) == 'xls'|| getExstendsion(l.url) == 'xlss'">
+                 <a href="{{l.url}}">
+                  <img  class="img-fluid" src="https://cdn.fileinfo.com/img/fv/file_viewer_android.png" alt="" >
+                </a>
+              </span >
+            </div>
+
+          </td>
+          <th *ngIf="item.type=='sound'">
+           {{item.question}}
+
+
+         </th>
+
+
+         <td  *ngIf="item.type=='sound'">
+           <div *ngFor="let l of item.value">
+
+             <audio controls=""  *ngIf="l.url" controlslist="nodownload">
+               <source [src]="sanitize(l.url)" type="audio/wav">
+                     </audio>
+
+             </div>
+
+           </td>
+         </tr>
+
+
+
+       </tbody>
+     </table>
+          <div class="row">
+
+     <div class=" gg popup-buttons text-center">
+        <ng-container *ngIf="order.status=='opened'&& order.user_id== 0 ">
+       <a [routerLink]="['/get-providers',{id:order.id,shipment:order.shipment,payment_method:order.payment_method}]" routerLinkActive="active" class="btn btn-primary hvr-shadow" data-dismiss="modal" aria-label="Close">{{'get-providers'|translate}}</a>
+
+     </ng-container>
+
+     <ng-container *ngIf="order.status=='opened' && order.user_id!=0 ">
+       <a *ngIf="role=='provider' " data-dismiss="modal" aria-label="Close" routerLink="/make-offer/{{order.id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow"> {{'make-offer'|translate}} </a>
+
+     </ng-container >
+     <ng-container *ngIf="order.status=='waiting' ">
+       <a routerLink="/get-offers/{{order.id}}" routerLinkActive="active"class="btn btn-primary hvr-shadow" data-dismiss="modal" aria-label="Close" style="padding: 9px 40px;"> {{'offer'|translate}}</a>
+     </ng-container>
+     <div *ngIf="role=='client'" style="display: inline-block;margin-right: 10px">
+       <div *ngIf="order.status=='processing' ">
+
+
+
+         <a routerLink="/accept-order/{{order.id}}"  routerLinkActive="active" class="btn btn-primary hvr-shadow" data-dismiss="modal" aria-label="Close">  {{'accept-order'|translate}} </a>
+         <a routerLink="/refused-order/{{order.id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow" data-dismiss="modal" aria-label="Close">{{'refused-order'|translate}}</a>
+       </div>
+
+     </div>
+
+
+     <ng-container *ngIf="order.status=='opened' && order.user_id!=0; else second">
+
+       <a routerLink="/get-messages/{{order.user_id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow " data-dismiss="modal" aria-label="Close">  {{'conversations'|translate}} </a>
+
+     </ng-container>
+
+
+     <ng-template #second>
+       <ng-container *ngIf="order.status=='processing'; else third">
+
+         <a routerLink="/get-messages/{{order.user_id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow" data-dismiss="modal" aria-label="Close">     {{'conversations'|translate}}</a>
+
+       </ng-container>
+     </ng-template>
+
+
+
+     <ng-template #third>
+       <ng-container *ngIf="order.status=='waiting'; else fourd">
+
+         <a routerLink="/get-messages/{{order.user_id}}" routerLinkActive="active"class="btn btn-primary hvr-shadow" data-dismiss="modal" aria-label="Close">  {{'conversations'|translate}}  </a>
+
+       </ng-container>
+     </ng-template>
+
+
+
+     <ng-container *ngIf="order.status=='closed'">
+       <a routerLink="/recipts/{{order.id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow" data-dismiss="modal" aria-label="Close"> {{'recipts'|translate}} </a>
+
+
+     </ng-container>
+
+     <ng-container *ngIf="order.status=='refused' && role=='provider'">
+       <a routerLink="/add-issue/{{order.id}}" routerLinkActive="active" class="btn btn-primary hvr-shadow" data-dismiss="modal" aria-label="Close"> {{'add-issue'|translate}}  </a>
+
+
+     </ng-container>
+     </div>
+   </div>
+ </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="box-status text-xl-right text-center">
+  <p class="lead">
+   {{'status'|translate}} :
+ </p>
+ <span *ngIf="item.status=='opened'">{{'opened'|translate}} </span>
+ <span *ngIf="item.status=='waiting'">{{'waiting'|translate}} </span>
+ <span *ngIf="item.status=='processing'">{{'processing'|translate}} </span>
+ <span *ngIf="item.status=='closed'">{{'closed'|translate}} </span>
+ <span *ngIf="item.status=='refused'">{{'refusedd'|translate}} </span>
+</div>
+</div>
+</div>
+<!-- End Box -->
+
+
+
+
+
+
+</div>
+<ng-container *ngIf="orders.length >=10">
+
+  <a class="btn btn-outline-primary hvr-shadow" (click)="more(10)">{{'more'|translate}}</a>
+</ng-container>
+</div>
+
+
+

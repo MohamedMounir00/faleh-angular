@@ -1,0 +1,107 @@
+<h1>{{'register-student'|translate}} </h1>
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert" *ngFor="let person of errors" dismiss-on-timeout="20">
+  <strong>{{person}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="error1" class="alert alert-warning alert-dismissible fade show" role="alert" dismiss-on-timeout="20">
+    <strong>{{error1}}</strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<form  #userForm="ngForm" novalidate  (ngSubmit)="onchange()">
+  <div class="form-group">
+    <label for="name">{{'name'|translate}}</label>
+            <span style="color:red ">*</span>
+
+    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" required #name="ngModel"[class.is-invalid]="name.invalid && name.touched" name="name" placeholder="{{'name'|translate}}" [(ngModel)]="countryValue.name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">{{'email'|translate}}</label>
+            <span style="color:red ">*</span>
+
+    <input type="email" class="form-control" id="exampleInputEmail1" required #email="ngModel"[class.is-invalid]="email.invalid && email.touched" aria-describedby="emailHelp" name="email" placeholder="{{'email'|translate}}" [(ngModel)]="countryValue.email">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">{{'password'|translate}}</label>
+            <span style="color:red ">*</span>
+
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{'password'|translate}}" required #password="ngModel"[class.is-invalid]="password.invalid && password.touched" name="password" [(ngModel)]="countryValue.password">
+
+  </div>
+  <div class="form-group">
+    <label for="password_confirmation">{{'password_confirmation'|translate}}</label>
+            <span style="color:red ">*</span>
+
+    <input type="password" class="form-control" id="password_confirmation" placeholder="{{'password_confirmation'|translate}}" required validateEqual="password" #password_confirmation="ngModel"[class.is-invalid]="password_confirmation.invalid && password_confirmation.touched" name="password_confirmation" [(ngModel)]="countryValue.password_confirmation">
+
+  </div>
+
+  <div class="form-group">
+    <label for="phone">{{'phone'|translate}}</label>
+    <input type="number"  required #phone="ngModel"   [class.is-invalid]="phone.invalid && phone.touched" class="form-control" id="phone" aria-describedby="phone" placeholder="{{'phone'|translate}}" [(ngModel)]="countryValue.phone" name="phone">
+  
+  </div>
+<!--
+
+
+-->
+<div class="form-group">
+ <label for="nationality">{{'nationality'|translate}}</label>
+        <span style="color:red ">*</span>
+
+ <select class="form-control custom-select" required #country="ngModel"[class.is-invalid]="country.invalid && country.touched"  name="nationality" [(ngModel)]="countryValue.nationality" >
+   <option value=""  selected>{{'nationality'|translate}} </option>
+   <option *ngFor="let t of countries" [value]="t.id"> {{t.name_ar}} </option>
+ </select>
+
+</div>
+
+<div class="form-group">
+  <label for="gender">{{'gender'|translate}}</label>
+        <span style="color:red ">*</span>
+
+  <select class="form-control custom-select" required #gender="ngModel"[class.is-invalid]="gender.invalid && gender.touched"  name="gender" [(ngModel)]="countryValue.gender">
+
+    <option value=""> {{'gender'|translate}}</option>
+
+    <option value="male"> {{'male'|translate}}</option>
+    <option value="female"> {{'female'|translate}}</option>
+  </select>
+
+</div>
+<div class="form-group">
+  <label for="studeyLevels">{{'studeyLevels'|translate}} </label>
+        <span style="color:red ">*</span>
+
+  <select class="form-control custom-select" required #studeyLevels="ngModel"[class.is-invalid]="studeyLevels.invalid && studeyLevels.touched"  name="study_level" [(ngModel)]="countryValue.study_level">
+   <option value="" selected>{{'studeyLevels'|translate}} </option>
+   <option *ngFor="let m of studey_levels" [value]="m.id"> {{m.name}} </option>
+ </select>
+ <small id="studeyLevels" class="text-danger" [class.d-none]="studeyLevels.valid || studeyLevels.untouched">name is requries</small>
+
+</div>
+
+<br>
+<agm-map [latitude]="lat" [longitude]="lng"      (mapClick)="placeMarker($event)" style="height: 300px" >
+
+  <agm-marker  [latitude]="lat" [longitude]="lng" ></agm-marker>
+</agm-map>
+
+
+
+<br>
+    <p class="led">بالتسجيل في الموقع فانك تكون موافق على الشروط و الاحكام  <a  routerLink="/terms-of-service" routerLinkActive="active1">اضغط هنا</a></p>
+
+
+    <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-primary hvr-shadow">{{'register'|translate}}</button>
+
+
+
+
+
+</form>

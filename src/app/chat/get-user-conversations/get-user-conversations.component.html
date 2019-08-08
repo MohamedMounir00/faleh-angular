@@ -1,0 +1,42 @@
+
+
+
+
+<div class="profile">
+     <h2 > {{'conversations' | translate}}</h2>
+
+<div *ngFor="let item of allconversations">
+
+    <!-- Start Previous Requests -->
+    <hr>
+    <div class="row" >
+        <div class="container hover">
+            <div class="req-info">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img class='img-fluid' src="assets/imgs/all-sections/user.png" alt="" *ngIf="!item.photo" (click)="getMessage(item.id)">
+                        <img class='img-fluid' src="{{item.photo}}" alt="" *ngIf="item.photo" (click)="getMessage(item.id)">
+
+                    </div>
+                    <div class="col-md-10" style="padding-right: 0;padding-left: 0">
+                        <h2> <a  class="nav-link" (click)="getMessage(item.id)">{{item.name}}</a></h2>
+                        <div class="location">
+                            <span>{{item.message}}</span>
+                        </div>
+                     
+                    </div>
+
+                </div>
+            </div>
+        </div>
+     
+
+    </div>
+    <!-- Start Previous Requests -->
+
+    <hr>
+</div>
+<div *ngIf="allconversations2==false">
+    <h5 style="font-size: 15px;">{{'no_chat' | translate}} </h5>
+</div>
+</div>

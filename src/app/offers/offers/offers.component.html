@@ -1,0 +1,161 @@
+
+
+
+
+<div class="completed-page">
+
+  <div *ngIf="error1" class="alert alert-warning alert-dismissible fade show" role="alert" dismiss-on-timeout="20">
+      <strong>{{error1}}</strong> 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+
+
+  <div *ngFor="let item of offers">
+
+
+
+
+    <table class="table table-borderless">
+
+      <tbody>
+        <tr>
+          <td>{{'desc'|translate}}</td>
+          <td>{{item.offer_description}}</td>
+
+        </tr>
+
+        <tr>
+          <td>{{'offer-value'|translate}}</td>
+          <td>{{item.offer_value}}</td>
+
+        </tr>
+        <tr>
+          <td>{{'percentage_company'|translate}}</td>
+          <td>{{item.percentage_company}}</td>
+
+        </tr>
+
+        <tr>
+         <td>{{'service_id'|translate}}</td>
+         <td>{{item.service_id}}</td>
+
+       </tr>
+
+
+       <tr>
+           <td>{{'total_price'|translate}}</td>
+        <td>{{item.total_price}}</td>
+
+      </tr>
+
+      <tr>
+          <td>{{'value_added'|translate}}</td>
+       <td>{{item.value_added}}</td>
+
+     </tr>
+     <tr>
+         <td>{{'user_name'|translate}}</td>
+       <td>{{item.user_name}}</td>
+
+     </tr>
+
+     <tr>
+         <td>{{'offer_photo'|translate}}</td>
+
+      <td   >
+       <div class="avatar" *ngFor="let f of item.offer_photo" style=" display: inline;">
+         <span *ngIf="(getExstendsion(f.url) == 'jpg') || getExstendsion(f.url) == 'jpeg'|| getExstendsion(f.url) == 'png'|| getExstendsion(f.url) == 'PNG'"> 
+
+           <a href="{{f.url}}" data-lightbox="image-1">   <img   [src]="f.url" alt="" style="height:40px;width: 50px ;display: inline;"></a>
+         </span>
+             <span *ngIf="(getExstendsion(f.url) == 'pdf')|| getExstendsion(f.url) == 'doc'|| getExstendsion(f.url) == 'docx'|| getExstendsion(f.url) == 'xls'|| getExstendsion(f.url) == 'xlss'" > 
+ <a href="{{f.url}}" > 
+  <img  class='img-fluid' src="https://cdn.fileinfo.com/img/fv/file_viewer_android.png" alt="" style="height:40px;width: 50px ;display: inline;">
+      </a>
+             </span >
+             </div>
+
+           </td>
+
+
+         </tr>
+       </tbody>
+     </table>
+     <div class="popup-buttons">
+      <div class="row">
+       <div class="container">
+        <div *ngIf="role=='client'">
+
+ <div class="col-xl-4 text-xl-right col-lg-12 col-md-12 col-12 text-center">
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+
+        <!-- Popup Header -->
+        <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+           <i class="fa fa-close"></i>
+         </button>
+       </div>
+
+
+    <!-- Popup Body -->
+       <div class="modal-body">
+      <form #userForm="ngForm" novalidate > 
+
+  <div class="form-group">
+      <label class="pay">{{'first_name'|translate}}</label>
+      <input name="first_name" class="form-control " id="first_name" rows="3" required="required" [(ngModel)]="first_name">
+
+    </div>
+     <div class="form-group">
+      <label class="pay" >{{'last_name'|translate}}</label>
+      <input name="last_name" class="form-control " id="last_name" rows="3" required="required" [(ngModel)]="last_name">
+
+    </div>
+          <div class="row">
+
+       <button type="submit" [disabled]="userForm.form.invalid" (click)="accpetOffer(item.id,item.offer_value)" class="btn btn-primary hvr-shadow " data-dismiss="modal">{{'save'|translate}}</button>
+
+     </div>
+  </form>
+ </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+             <a class="btn btn-primary hvr-shadow" data-toggle="modal" (click)="clear()" data-target="#exampleModal"> {{'accept'|translate}} </a>
+
+
+          <a class="btn dangert hvr-shadow "(click)="regusedOffer(item.id)">{{'refused'|translate}} </a>
+        </div>
+
+        <div style="text-align: center" *ngIf="role=='provider'">
+          <a class="nav-link" routerLink="/edit-offer/{{item.id}}" routerLinkActive="active">{{'edit-offer'|translate}}</a>
+        </div>
+      </div>
+     </div>
+
+    </div>
+
+
+  </div>
+
+<br>
+<div class="resp-container">
+
+    <iframe   class="resp-iframe"   [src]="iframeURL"
+  frameborder="0" allowfullscreen  > </iframe> 
+</div>
+
+</div>
+
+
+

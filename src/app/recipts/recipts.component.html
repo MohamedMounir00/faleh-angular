@@ -1,0 +1,53 @@
+<div class=" currently-page  completed-page">
+
+
+
+
+    <div class="row">
+
+<div class="container">
+
+        <table class="table table-borderles">
+
+            <tbody>
+
+                <tr>
+                    <td> {{'recipts_id'|translate}}</td>
+                    <td>{{recipts.id}}</td>
+
+                </tr>
+                <tr>
+                    <td> {{'offer-value'|translate}}</td>
+                    <td>{{recipts.price_offer}}</td>
+
+                </tr>
+                <tr>
+                    <td> {{'percentage_company'|translate}}</td>
+                    <td>{{recipts.percentage_company}}</td>
+
+                </tr>
+                <tr>
+                    <td> {{'total_price'|translate}}</td>
+                    <td>{{recipts.total}}</td>
+
+                </tr>
+
+                <tr>
+                    <td>{{'value_added'|translate}}</td>
+                    <td>{{recipts.value_added}}</td>
+
+                </tr>
+                <tr>
+                    <td>{{'date'|translate}}</td>
+                    <td>{{recipts.created_at}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary hvr-shadow" (click)="Invoice()" style="background-color: #2598c4;margin-left: 5px;border-color: #2598c4;display: block;margin: auto"> {{'print'|translate}} </button>
+
+</div>
+    </div>
+
+</div>

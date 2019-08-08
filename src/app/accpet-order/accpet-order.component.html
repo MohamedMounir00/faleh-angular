@@ -1,0 +1,43 @@
+ <div class="edit-user-page">
+                       <div class="row">
+                        <div class="col-lg-12"> 
+                            <h2>{{'accept-order'|translate}}</h2>
+
+
+  <form #userForm="ngForm" novalidate (ngSubmit)="onchange()"> 
+
+  <div class="form-group">
+      <label >{{'rating'|translate}}</label>
+
+      <fieldset class="rating">
+          <input type="radio" [name]="stars" value="5" [(ngModel)]="stars" [checked]="rating===5" />
+          <label title="Rocks!" (click)='onClick(5)'>5 stars</label>
+
+          <input type="radio" [name]="stars" value="4"[(ngModel)]="stars" [checked]="rating===4" />
+          <label title="Pretty good" (click)='onClick(4)'>4 stars</label>
+
+          <input type="radio" [name]="stars" value="3" [(ngModel)]="stars"[checked]="rating===3" />
+          <label title="Meh" (click)='onClick(3)'>3 stars</label>
+
+          <input type="radio" [name]="stars" value="2"[(ngModel)]="stars" [checked]="rating===2" />
+          <label title="Kinda bad" (click)='onClick(2)'>2 stars</label>
+
+          <input type="radio" [name]="stars" value="1" [(ngModel)]="stars"[checked]="rating===1" />
+          <label title="Sucks big time" (click)='onClick(1)'>1 star</label>
+      </fieldset>
+   
+  </div>
+
+
+	<div class="form-group">
+			<label >{{'comment'|translate}}</label>
+			<textarea name="comment" class="form-control" id="comment" rows="3" required="required" name="comment" [(ngModel)]="comment"></textarea>
+
+		</div>
+
+  <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-primary hvr-shadow">{{'save'|translate}}</button>
+</form>
+</div>
+
+</div>
+</div>

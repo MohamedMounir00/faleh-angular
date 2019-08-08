@@ -1,0 +1,206 @@
+<!-- Start Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-main-page">
+    <div class="container">
+        <a class="navbar-brand" routerLink="" routerLinkActive="active1">
+            <img src="assets/imgs/index/logo.svg" alt="">
+        </a>
+    
+
+
+    </div>
+</nav>
+
+<!-- End Navigation Bar -->
+
+
+<!-- Start Header -->
+<div class="header">
+    <div class="container">
+        <h2>من نحن ؟</h2>
+        <div [innerHTML]="home_index.who"></div>
+        <span>دخول  كـ : </span>
+        <a routerLink="/login" (click)="setrole('client')" routerLinkActive="active1" class="btn btn-primary hvr-shadow">طالب خدمة</a>
+        <a routerLink="/login" (click)="setrole('provider')" routerLinkActive="active1" class="btn btn-primary hvr-shadow">مقدم خدمة</a>
+    </div>
+</div>
+<!-- End Header -->
+
+
+<!-- Start Our Services -->
+<section class="our-services">
+    <div class="container">
+        <div class="serv-title">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h2>خدماتنا</h2>
+                </div>
+
+            </div>
+        </div>
+
+   <div class="all-section">
+
+
+                       <div class="container-fluid">
+                         <div class="row">
+
+                           <!-- START IMAGE -->
+                           <div class="col-md-4 col-sm-6"  *ngFor="let item of categories">
+                             <div class="img" (click)="login()">
+                                 <img src="{{item.photo}}" class="img-fluid" style="background-image: url('assets/imgs/index/logo.svg');background-repeat:no-repeat; background-size: cover; ">
+                                 <div class="overlay">
+                                   <p>{{item.name}}</p>
+                                 </div>
+                             </div>
+                           </div>
+                           <!-- END IMAGE -->
+
+                          
+                           <!-- END IMAGE -->
+
+                         </div>
+
+
+                         </div>
+                      </div>
+    </div>
+</section>
+<!-- End Our Services -->
+
+
+
+
+<!-- Start How To Work -->
+<section class='how-to-work'>
+    <div class="container">
+        <div class="sec-title">
+            <h2>كيف نعمل </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="sec-one">
+                    <span>1.</span><img src="assets/imgs/index/login.svg" alt="">
+                    <p>تسجيل الدخول</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="sec-two">
+                    <span>2.</span><img src="assets/imgs/index/search.svg" alt="">
+                    <p>تصفح الطلبات</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="sec-three">
+                    <span>3.</span><img src="assets/imgs/index/cursor.svg" alt="">
+                    <p>تقدم لطلب الوظيفة</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="sec-four">
+                    <span>4.</span><img src="assets/imgs/index/man-in-office-desk-with-computer.svg" alt="">
+                    <p>القيام بالطلب</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="sec-five">
+                    <span>5.</span><img src="assets/imgs/index/payment.svg" alt="">
+                    <p>الحصول علي الأموال</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="sec-six">
+                    <span>6.</span><img src="assets/imgs/index/star.svg" alt="">
+                    <p>إعطاء التقييم</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End How To Work -->
+
+
+
+<!-- Start Our Customers -->
+
+<!-- End Our Customers -->
+
+
+
+<!-- End Customers Slider 
+ [ngClass]="{'active': item.index == 0 , '': item.index != 0}"
+ -->
+
+
+
+<!-- End Testimonials -->
+
+
+
+
+<!-- Start Footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-12">
+                <div class="logo">
+                    <a href="#">
+                        <img class="img-responsive" src="assets/imgs/index/logo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="social">
+                    <ul class="list-unstyled">
+                        <li><a href="{{links.google}}"><i class="fa-1 fa fa-google-plus" title="Google Plus">
+                            
+                        </i></a></li>
+                        <li><a href="{{links.facebook}}"><i class="fa-2 fa fa-facebook" title="Facebook"></i>
+                        </a>
+                        </li>
+                        <li> <a href="{{links.twitter}}"> <i class="fa-3 fa fa-twitter" title="Twitter"></i></a></li>
+                    </ul>
+                </div>
+                <div class="links">
+                    <ul class="list-unstyled">
+                        <li><a routerLink="/about-faleh" routerLinkActive="active1">عن فالح</a></li>
+
+                        <li><a  routerLink="/support" routerLinkActive="active1">الدعم</a></li>
+                        <li><a  routerLink="/terms-of-service" routerLinkActive="active1">شروط الخدمة</a></li>
+                        <li><a  routerLink="/staff" routerLinkActive="active1">فريق العمل</a></li>
+                        <li><a  routerLink="/how-it-works" routerLinkActive="active1">كيف نعمل</a></li>
+                    </ul>
+                </div>
+                <p> جميع الحقوق محفوظة لدى شركة وادي الخبراء لتقنيةالمعلومات صاحبة العلامة التجارية فالح © 2018</p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <div class="download-section text-center">
+                    <h3>قم بتحميل التطبيق الأن</h3>
+                    <div class="chevron"><i class="fa fa-chevron-down fa-2x"></i></div>
+                    <a href="https://itunes.apple.com/gb/app/faleh/id1444336867"><img class="img-fluid" src="assets/imgs/index/apple_store.svg" alt=""></a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.ev.phaleh"><img class="img-fluid" src="assets/imgs/index/google_play.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="phones">
+                    <img class="img-fluid text-center" src="assets/imgs/index/mobila_application_footer.png" alt="">
+                </div>
+            </div>
+            <span class="hidden"> جميع الحقوق محفوظة لدى شركة وادي الخبراء لتقنيةالمعلومات صاحبة العلامة التجارية فالح © 2018</span>
+        </div>
+    </div>
+</div>
+<!-- End Footer -->
+
+
+<!-- End Overlay Loading -->
+
+
+
+

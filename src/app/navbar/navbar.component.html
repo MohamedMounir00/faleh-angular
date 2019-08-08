@@ -1,0 +1,79 @@
+
+<nav class="navbar navbar-expand-lg" >
+ <div class="container">
+  <a class="navbar-brand" href="#">
+    <img src="assets/imgs/all-sections/logo.svg" alt="">
+  </a>
+
+  <i class="fa fa-navicon fa-2x navbar-toggle" data-toggle="collapse" data-target="#NAV" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></i>
+
+  <div class="collapse navbar-collapse" id="NAV">
+    <ul class="navbar-nav mr-auto">
+
+
+
+
+
+
+      <a href="" *ngIf="this.router.url === '/login'">test</a>
+
+      <li class="nav-item publish" *ngIf="role=='client'">
+
+        <a href="#newOrder"  class="btn btn-primary hvr-shadow all-sec-btn" routerLink="/all-sections" routerLinkActive="active1">{{ 'new_services' | translate }}</a>
+
+      </li>
+
+
+      <li class="nav-item n-lang dropdown" style="margin-top: 5px">
+
+        <a class="nav-link dropdown-toggle" href="#" id="mounir" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-language fa-2x" ></i>
+
+          {{'lang' | translate}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+          <a class="dropdown-item" (click)="switchLanguage('en')">{{'en' | translate}}</a>
+
+          <a class="dropdown-item" (click)="switchLanguage('ar')">{{'ar' | translate}}</a>
+        </div>
+      </li>
+
+      <li class="nav-item n-log dropdown">
+
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="photo!='https://faleh.app/app/public/uploads/users'&&photo!=''">
+          <i class="fa fa-chevron-down chevron"></i>
+          <img src="{{photo}}" class="img-fluid" style="width: 35px;height: 35px;border-radius: 50%; margin-left: 5px;margin-left: 5px" > 
+
+          {{username}}
+          <span class="role" *ngIf="role=='client'">{{'client' | translate}}</span>
+          <span class="role"  *ngIf="role=='provider'">{{'provider' | translate}}</span>
+        </a>
+
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="photo=='https://faleh.app/app/public/uploads/users'">
+          <i class="fa fa-chevron-down chevron"></i>
+          <img src="https://avatars.servers.getgo.com/2205256774854474505_medium.jpg" class="img-fluid" style="width: 35px;height: 35px;border-radius: 50%; margin-left: 5px;margin-left: 5px" > 
+
+          {{username}}
+          <span class="role" *ngIf="role=='client'">{{'client' | translate}}</span>
+          <span class="role"  *ngIf="role=='provider'">{{'provider' | translate}}</span>
+        </a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="photo==''">
+          <i class="fa fa-chevron-down chevron"></i>
+          <img src="https://avatars.servers.getgo.com/2205256774854474505_medium.jpg" class="img-fluid" style="width: 35px;height: 35px;border-radius: 50%; margin-left: 5px;margin-left: 5px" > 
+
+          {{username}}
+          <span class="role" *ngIf="role=='client'">{{'client' | translate}}</span>
+          <span class="role"  *ngIf="role=='provider'">{{'provider' | translate}}</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a  class="dropdown-item"   (click)="ngOnDestroy()"  routerLinkActive="active1">{{'logout' | translate}}</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+</nav>
+
+

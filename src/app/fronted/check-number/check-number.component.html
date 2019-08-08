@@ -1,0 +1,17 @@
+
+<h1>  لقد تم ارسال كود الى بريدك الالكترونى </h1>
+<div *ngIf="error" class="alert alert-warning alert-dismissible fade show" role="alert" dismiss-on-timeout="20">
+		<strong>{{error}}</strong> 
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+
+
+<form  #userForm="ngForm" novalidate  (ngSubmit)="onchange()">
+  <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ادخل الكود" [(ngModel)]="code" name="code" required="required">
+  </div>
+  <button type="submit" [disabled]="userForm.form.invalid"class="btn btn-primary hvr-shadow">استرجاع</button>
+
+</form>

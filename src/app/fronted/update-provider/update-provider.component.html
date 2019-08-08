@@ -1,0 +1,190 @@
+
+ <div>
+                       <div class="row">
+                        <div class="col-lg-12"> 
+	<div class="alert alert-warning alert-dismissible fade show" role="alert" *ngFor="let person of errors" dismiss-on-timeout="20">
+		<strong>{{person}}</strong> 
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div *ngIf="error1" class="alert alert-warning alert-dismissible fade show" role="alert" dismiss-on-timeout="20">
+    <strong>{{error1}}</strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+	<form  #userForm="ngForm" novalidate  (ngSubmit)="onchange()"autocomplete="off" >
+		<div class="form-group">
+			<label for="name">{{'name'|translate}}</label>
+			<input type="text" class="form-control" id="name" aria-describedby="nameHelp" required #name="ngModel"[class.is-invalid]="name.invalid && name.touched" name="name" placeholder="{{'name'|translate}}" [(ngModel)]="providerValue.Name">
+		</div>
+
+		<div class="form-group">
+			<label for="exampleInputEmail1">{{'email'|translate}}</label>
+			<input type="email" class="form-control" id="exampleInputEmail1" required #email="ngModel"[class.is-invalid]="email.invalid && email.touched" aria-describedby="emailHelp" name="email" placeholder="{{'email'|translate}}" [(ngModel)]="providerValue.email"  autocomplete="new-email" >
+
+		</div>
+
+		<div class="form-group">
+			<label for="password">{{'password'|translate}}</label>
+			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{'password'|translate}}" name="password" [(ngModel)]="providerValue.password" autocomplete="new-password">
+		
+
+		</div>
+
+		<div class="form-group">
+			<label for="password_confirmation">{{'password_confirmation'|translate}}</label>
+			<input type="password" class="form-control" id="password_confirmation" placeholder="{{'password_confirmation'|translate}}"  name="password_confirmation" [(ngModel)]="providerValue.password_confirmation" autocomplete="off">
+			
+
+		</div>
+
+		<div class="form-group">
+			<label for="phone">{{'phone'|translate}}</label>
+			<input type="number"  required #phone="ngModel"  [class.is-invalid]="phone.invalid && phone.touched" class="form-control" id="phone" aria-describedby="phone" placeholder="{{'phone'|translate}}" [(ngModel)]="providerValue.phoneNumber" name="phone">
+			<div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+
+
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="Bank_name">{{'Bank_name'|translate}}</label>
+			<input type="text" class="form-control" id="Bank_name" aria-describedby="Bank_name" required #Bank_name="ngModel"[class.is-invalid]="Bank_name.invalid && Bank_name.touched" name="Bank_name" placeholder="{{'Bank_name'|translate}}" [(ngModel)]="providerValue.Bank_name">
+		</div>
+		<div class="form-group">
+			<label for="bank_account">{{'bank_account'|translate}}</label>
+			<input type="text" class="form-control" id="bank_account" aria-describedby="bank_account" required #bank_account="ngModel"[class.is-invalid]="bank_account.invalid && bank_account.touched" name="bank_account" placeholder="{{'bank_account'|translate}}" [(ngModel)]="providerValue.bank_account">
+		</div>
+
+		<div class="form-group">
+			<label for="category">{{'categories'|translate}}</label>
+
+		
+
+			<ng-multiselect-dropdown
+			name="nnnn"
+  [placeholder]="'categories'|translate"
+  [data]="provider_categories"
+  [(ngModel)]="selectedItems"
+  [settings]="dropdownSettings"
+>
+</ng-multiselect-dropdown>
+
+		</div>
+		<div class="form-group" >
+			<label for="nationality">{{'nationality'|translate}}</label>
+
+			<select class="form-control custom-select"    required #country="ngModel"[class.is-invalid]="country.invalid && country.touched"  name="nationality" [(ngModel)]="providerValue.nationality_id"  *ngIf="lang =='ar'">
+				<option value=""  selected>{{'nationality'|translate}} </option>
+				<option *ngFor="let t of countries" [value]="t.id" > {{t.name_ar}} </option>
+			</select>
+
+				<select style="padding-left:10px" class="form-control custom-select"    required #country="ngModel"[class.is-invalid]="country.invalid && country.touched"  name="nationality" [(ngModel)]="providerValue.nationality_id"  *ngIf="lang =='en'">
+				<option value=""  selected>{{'nationality'|translate}} </option>
+				<option *ngFor="let t of countries" [value]="t.id" > {{t.name_en}} </option>
+			</select>
+
+		</div>
+
+		<div class="form-group">
+			<label for="studeyLevels">{{'studeyLevels'|translate}}</label>
+
+			<select style="padding-left:10px" class="form-control custom-select" required #studeyLevels="ngModel"[class.is-invalid]="studeyLevels.invalid && studeyLevels.touched"  name="study_level" [(ngModel)]="providerValue.study_level">
+				<option value="" selected>{{'studeyLevels'|translate}} </option>
+				<option *ngFor="let m of studey_levels" [value]="m.id"> {{m.name}} </option>
+			</select>
+
+		</div>
+
+
+		<div class="form-group">
+			<label for="bio">{{'gender'|translate}}</label>
+
+			<select style="padding-left:10px" class="form-control custom-select" required #gender="ngModel"[class.is-invalid]="gender.invalid && gender.touched"  name="gender" [(ngModel)]="providerValue.gender">
+		      <option value=""> {{'gender'|translate}}</option>
+
+          <option value="male"> {{'male'|translate}}</option>
+          <option value="female"> {{'female'|translate}}</option>
+			</select>
+
+		</div>
+
+		<div class="form-group">
+			<label for="bio">{{'payment_method'|translate}}</label>
+
+			<select style="padding-left:10px" class="form-control custom-select" required #payment_method="ngModel"[class.is-invalid]="payment_method.invalid && payment_method.touched"  name="payment_method" [(ngModel)]="providerValue.payment_method">
+				<option value=""> {{'payment_method'|translate}}</option>
+
+				<option value="cash"> {{'cash'|translate}}</option>
+				<option value="credit_card"> {{'credit_card'|translate}}</option>
+				<option value="cash_visa"> {{'cash_visa'|translate}}</option>
+			</select>
+			<small id="payment_method" class="text-danger" [class.d-none]="payment_method.valid || payment_method.untouched">payment method is requried</small>
+
+		</div>
+
+		<div class="form-group">
+			<label for="bio">{{'delivery'|translate}}</label>
+
+			<select style="padding-left:10px" class="form-control custom-select" required #delivery="ngModel"[class.is-invalid]="delivery.invalid && delivery.touched"  name="delivery" [(ngModel)]="providerValue.delivery">
+				<option value=""> {{'delivery'|translate}}</option>
+
+				<option value="0"> {{'no'|translate}}</option>
+				<option value="1"> {{'yes'|translate}}</option>
+			</select>
+
+		</div>
+
+
+
+
+		<div class="form-group">
+			<label for="bio">{{'bio'|translate}}</label>
+			<textarea name="bio" class="form-control" id="bio" rows="3" required #bio="ngModel"[class.is-invalid]="bio.invalid && bio.touched"  name="bio" [(ngModel)]="providerValue.bio"></textarea>
+
+		</div>
+		<div class="form-group">
+			<label for="last_works">{{'last_works'|translate}}</label>
+			<textarea name="last_works" class="form-control" id="last_works" rows="3"  name="last_works" [(ngModel)]="providerValue.last_works"></textarea>
+
+		</div>
+
+		<div class="form-group">
+			<label for="facebook">{{'facebook'|translate}}</label>
+			<input type="text" class="form-control" id="facebook" aria-describedby="facebook" name="facebook" placeholder="Enter facebook" [(ngModel)]="providerValue.facebook">
+
+		</div>
+
+		<div class="form-group">
+			<label for="LinkedIn">{{'LinkedIn'|translate}}</label>
+			<input type="text" class="form-control" id="LinkedIn" aria-describedby="LinkedIn"  name="LinkedIn" placeholder="Enter LinkedIn" [(ngModel)]="providerValue.LinkedIn">
+
+		</div>
+
+  <br>
+  
+
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="placeMarker($event)" style="height: 300px"   
+  [disableDefaultUI]="false"
+  >
+
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+
+</agm-map>
+          
+<br>
+          
+<br>
+
+		<button style="width: 100px; display: block;margin:auto" type="submit" [disabled]="userForm.form.invalid" class="btn btn-primary hvr-shadow ed">{{'edit'|translate}}</button>
+
+
+
+
+
+	</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,1483 @@
+/*Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /*************************************
+    ALL SECTIONS PAGE STYLES
+****************************************/
+   .bl-head {
+    margin: 20px 0
+}
+    .role {
+        padding-left: 40px
+    }
+
+.audio-btb {
+        width: 200px
+    }
+
+.start , .stop {
+    margin-bottom: 10px
+}
+.profile h5 {
+    text-align: center;
+}
+.period button {
+    margin-top: 0
+}
+audio {
+    width: 100%;
+}
+.about {
+    text-align: center
+}
+.pup-sel {
+    margin-top: 0 !important
+}
+    .navbar .dropdown i {
+        left: 0
+    }
+    .navbar .dropdown a {
+        margin-left: 30px
+    }
+    .navbar .dropdown-item {
+        margin-left: 0 !important
+    }
+    /* Start Navigation Bar */
+    .navbar {
+        width: 100%;
+    }
+    .navbar .dropdown i.chevron {
+        left: 0
+    }
+    .navbar .dropdown img {
+        margin-left: -10px !important;
+        margin-right: 7px
+    }
+    
+    .navbar .navbar-toggle {
+        color: #FFF;
+        padding: 5px 10px;
+        border-radius: 2px;
+        background-color: #2598c4;
+        cursor: pointer
+    }
+    .navbar .nav-item {
+        text-align: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    .navbar .nav-item.talking,
+    .navbar .nav-item.help {
+        border-top: 1px solid #ddd;
+        padding: 15px 0 9px 0
+    }
+    .navbar .nav-item.help {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px
+    }
+    .navbar .nav-item.talking i,
+    .navbar .nav-item.help i {
+        float: right;
+        margin-top: 2px
+    }
+    .navbar .nav-item.talking a.nav-link,
+    .navbar .nav-item.help a.nav-link {
+        float: right;
+        margin-top: 2px;
+        margin-right: 10px;
+        font-size: 15px
+    }
+    .navbar .start {
+        margin-bottom: 10px
+    }
+    .navbar .dropdown {
+        margin-right: 60px
+    }
+    .navbar-nav .nav-link {
+        padding-right: 10px
+    }
+    .navbar .dropdown-menu {
+        position: absolute;
+        right: 0px;
+        max-width: 170px;
+        top: 55px;
+        left: 10px;
+    }
+    .navbar .dropdown-menu:after {
+        left: 120px
+    }
+
+    /* End Navigation Bar */
+    .header h2:after {
+        right: 0;
+        margin: auto;
+    }
+    .completed-page .box .box-image {
+        width: 130px
+    }
+
+    .our-services .serv-title h2:after {
+        right: 0;
+        margin: auto;
+    }
+
+    .how-to-work .sec-title h2:after {
+        right: 0;
+        margin: auto;
+    }
+
+    /* Start Slidebar */
+
+    .sidebar {
+        min-height: 56px;
+        margin-bottom: 15px
+    }
+    .sidebar .card-header {
+        text-align: center
+    }
+    .sidebar .card-header i {
+        top: 20px;
+        /* left: 110px; */
+        bottom: 0;
+        /* right: 230px; */
+        margin: 0px 6px;
+    }
+
+    /* End Slidebar */
+
+
+    /* Start Content */
+
+    .content h2 {
+        text-align: center
+    }
+    
+    .profile-img {
+        margin: 0 auto 15px auto;
+        
+    }
+ 
+    .completed-page .box .box-heading h3 {
+        text-align: center
+    }
+    /* End Content */
+
+
+    /* Start Footer */
+    footer {
+        padding-bottom: 10px
+    }
+    footer .scroll-to-top i {
+        margin-bottom: 30px
+    }
+    footer .social-links {
+        margin: 15px 0
+    }
+    footer .social-links i {
+        margin-left: 30px;
+    }
+    footer p.start {
+        display: none
+    }
+    footer p.end {
+        font-size: 13px;
+        color: #6f6f6f;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+/* End Footer */
+
+/**********************************
+    INDEX PAGE
+**********************************/
+/* Navigation Bar */
+
+.navbar-main-page .fa-bars {
+    color: #FFF;
+    background-color: #2598c4;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px
+}
+.navbar-main-page button:focus {
+    outline: none
+}
+.navbar-main-page .navbar-nav {
+    background-color: #000;
+    z-index: 3;
+    position: relative;
+}
+.navbar-main-page .nav-item {
+    text-align: right
+}
+.navbar-main-page .nav-link {
+    margin-bottom: 10px
+}
+.navbar-main-page .btn-1 {
+    margin-bottom: 12px
+}
+.navbar-main-page .btn-2 {
+    margin-bottom: 20px;
+    padding: 8px 28px !important
+}
+
+.header {
+    text-align: center
+}
+.header h2:after {
+    left: 0;
+    margin: auto;
+}
+
+
+/* Our Services */
+.our-services {
+    text-align: center
+}
+.our-services .serv-title h2 {
+    margin-bottom: 30px
+}
+.our-services .serv-title h2:after {
+    top: 55px;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.our-services .serv-img-two , .serv-img-four,
+.serv-img-six {
+    margin-bottom: 25px
+}
+.our-services .serv-img-one .overlay h4:after,
+.our-services .serv-img-two .overlay h4:after,
+.our-services .serv-img-three .overlay h4:after,
+.our-services .serv-img-four .overlay h4:after,
+.our-services .serv-img-five .overlay h4:after,
+.our-services .serv-img-six .overlay h4:after,
+.our-services .serv-img-seven .overlay h4:after,
+.our-services .serv-img-eight .overlay h4:after {
+    right: 0;
+    left: 0;
+    margin: auto
+}
+
+
+/* How To Work */
+.how-to-work {
+    text-align: center;
+    padding: 20px 0 50px 0
+}
+.how-to-work .sec-title h2:after {
+    left: 0;
+    margin: auto
+}
+.how-to-work .sec-two, .sec-four, .sec-six {
+    position: static
+}
+
+/* Our Customers */
+.our-customers .overlay {
+    padding: 30px 0
+}
+.our-customers .overlay .cus-title h2 {
+    margin-bottom: 45px;
+    text-align: center
+}
+.our-customers .overlay .cus-title h2:after{
+    right: 0;
+    margin: auto
+}
+.our-customers .overlay .cus-content p {
+    font-size: 16px
+}
+.our-customers .overlay .cus-content {
+    padding: 0 10px
+}
+
+
+/* Customer Slider */
+.customer-slider {
+    width: 350px
+}
+.owl-theme .owl-dots .owl-dot {
+    display: none !important
+}
+
+
+/* testimonials */
+.testimonials {
+    text-align: center;
+    padding: 0 0 50px 0
+}
+.testimonials .testimonials-title h2:after {
+    right: 0;
+    margin: auto
+}
+.testimonials p {
+    width: 335px
+}
+.testimonials .carousel {
+    width: 380px
+}
+.testimonials p:after {
+    left: 160px
+}
+
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding-top: 220px
+    }
+    .footer .logo {
+        margin-bottom: 20px;
+        margin-top: 20px
+    }
+    .footer .links {
+        margin-bottom: 180px
+    }
+    .footer .phones , .footer p {
+        display: none
+    }
+    .footer .hidden {
+        display: inline-block;
+        margin: auto;
+        margin-top: 20px;
+        color: #777;
+        padding: 10px;
+        font-weight: 600
+    }
+/*************************************
+    COMPLETED REQUESTES PAGE STYLES
+****************************************/
+    .completed-page .modal-content {
+        width: 100%;
+        text-align: left;
+    }
+.completed-page .modal-body .popup-list-one {
+        margin-right: 60px
+    }
+    .completed-page .box  a {
+        margin-top: 0
+    }
+.completed-page .box {
+    text-align: center
+}
+    .completed-page .modal-header span {
+        margin: 10px 7px;
+    }
+
+/*************************************
+    CURRENTLY REQUESTES PAGE STYLES
+****************************************/
+
+.currently-page .modal-body .popup-list-one {
+        margin-right: 60px
+    }
+    .currently-page .box .box-content a {
+    display: inherit;
+    margin-top: 10px
+}
+.currently-page .box {
+    text-align: center
+}
+
+/*************************************
+    INVENT PAGE STYLES
+****************************************/
+.invent-page .col-md-6 {
+  width: 299px;
+  margin: auto;
+}
+.invent-page h2 {
+  font-size: 25px
+}
+.invent-page .user-image i {
+  margin-top: 10px
+}
+.invent-page .title {
+  margin-right: -10px
+}
+.invent-page .buttons {
+  margin-bottom: 10px
+}
+.invent-page .buttons a:first-child {
+  margin-left: 10px
+}
+
+/*************************************
+    EDIT USER PAGE STYLES
+****************************************/
+
+.edit-user-page img {
+    width: 80px
+}
+    .edit-user-page form .form-buttons {
+        width: 300px;
+        margin: auto
+    }
+    .edit-user-page form button:first-of-type {
+        /* margin-left: 0px; */
+        margin-bottom: 20px;
+    }
+
+
+        /*************************************
+    PROFILE PAGE STYLES
+****************************************/
+.profile .user-info {
+    text-align: center
+}
+.profile .user-info img {
+    /* margin-bottom: -135px; */
+    /* width: 105% !important; */
+    /* height: 100% !important; */
+}
+.profile .user-info .star-rate {
+    margin-top: -15px
+}
+    .profile .user-info #profileImage {
+        width: 100px;
+        height: 100px
+    }
+    .profile .user-info h2 {
+        font-size: 25px
+    }
+    .profile .edit-file {
+        margin-top: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .profile .work-states {
+        padding: 10px;
+        text-align: center
+    }
+    .profile .work-states p {
+        font-size: 18px
+    }
+    .profile .about p , .profile .req-info {
+        text-align: center
+    }
+
+    .profile .period {
+        text-align: center;
+        margin-top: 20px
+    }
+    .profile .req-info img {
+        /* margin-bottom: 15px */
+    }
+    .profile .req-info .location , .profile .req-info .star-rate
+    {
+        text-align: center;
+    }
+
+
+
+
+}
+
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+ /*************************************
+    ALL SECTIONS PAGE STYLES
+****************************************/
+   .bl-head {
+    margin: 20px 0
+}
+    .role {
+        padding-left: 40px
+    }
+.start , .stop {
+    margin-bottom: 10px
+}
+.profile h5 {
+    text-align: center;
+}
+.period button {
+    margin-top: 0
+}
+.about {
+    text-align: center
+}
+.pup-sel {
+    margin-top: 0 !important
+}
+.navbar .dropdown i {
+        left: 0;
+        top: 15px
+    }
+    .navbar .dropdown a {
+        margin-left: 30px;
+        margin-top: 10px
+    }
+    .navbar .dropdown-item {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+    .navbar .dropdown i.chevron {
+        left: 0;
+        top: 30px
+    }
+    .navbar .dropdown img {
+        margin-left: -10px !important;
+        margin-right: 7px
+    }
+    /* Start Navigation Bar */
+    .navbar {
+        width: 545px
+    }
+    .navbar .navbar-toggle {
+        color: #FFF;
+        padding: 5px 10px;
+        border-radius: 2px;
+        background-color: #2598c4;
+        cursor: pointer
+    }
+    .navbar .nav-item {
+        text-align: left;
+        margin-right: 10px;
+    }
+    .navbar .nav-item.talking,
+    .navbar .nav-item.help {
+        border-top: 1px solid #ddd;
+        padding: 15px 0 9px 0
+    }
+    .navbar .nav-item.help {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px
+    }
+    .navbar .nav-item.talking i,
+    .navbar .nav-item.help i {
+        float: right;
+        margin-top: 2px
+    }
+    .navbar .nav-item.talking a.nav-link,
+    .navbar .nav-item.help a.nav-link {
+        float: right;
+        margin-top: 2px;
+        margin-right: 10px;
+        font-size: 15px
+    }
+    .navbar .start {
+        margin-bottom: 10px
+    }
+    .navbar .dropdown {
+        margin-right: 60px
+    }
+    .navbar-nav .nav-link {
+        padding-right: 10px
+    }
+    .navbar .dropdown-menu {
+        position: absolute;
+        right: 0;
+        max-width: 170px;
+        top: 60px;
+        left: 10px;
+    }
+    .navbar .dropdown-menu:after {
+        left: 120px
+    }
+
+    /* End Navigation Bar */
+
+    .header h2:after {
+        right: 0;
+        margin: auto;
+    }
+    .completed-page .box .box-image {
+        width: 130px
+    }
+.completed-page .box .box-heading h3 {
+        text-align: center
+    }
+    .our-services .serv-title h2:after {
+        right: 0;
+        margin: auto;
+    }
+
+    .how-to-work .sec-title h2:after {
+        right: 0;
+        margin: auto;
+    }
+    .testimonials .testimonials-title h2:after {
+        right: 0;
+        margin: auto;
+    }
+    
+    .profile-img {
+        margin: 0 auto 15px auto;
+        
+    }
+
+    /* Start Slidebar */
+
+    .sidebar {
+        min-height: 56px;
+        margin-bottom: 15px
+    }
+
+    .sidebar .card-header {
+        text-align: center
+    }
+
+    .sidebar .card-header i {
+        top: 20px;
+        /* left: 110px; */
+        bottom: 0;
+        /* right: 230px; */
+        margin: 0px 6px;
+    }
+
+    /* End Slidebar */
+    /* Start Content */
+
+    .content h2 {
+        text-align: center
+    }
+
+    /* End Content */
+
+    /* Start Footer */
+
+    footer .logo {
+        margin-bottom: 30px
+    }
+
+    footer .scroll-to-top i {
+        margin-bottom: 30px
+    }
+
+    footer .social-links i {
+        margin-left: 33px
+    }
+
+    footer p.start {
+        display: none
+    }
+
+    footer p.end {
+        font-size: 13px;
+        color: #6f6f6f;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+    /* End Footer */
+
+    /**************************************
+    INDEX PAGE
+    **************************************/
+     /* Navigation Bar */
+     .navbar-main-page .fa-bars {
+        color: #FFF;
+        background-color: #2598c4;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 5px
+    }
+    .navbar-main-page button:focus {
+        outline: none
+    }
+    .navbar-main-page .navbar-nav {
+        background-color: #000;
+        z-index: 3;
+        position: relative;
+    }
+    .navbar-main-page .nav-item {
+        text-align: right
+    }
+    .navbar-main-page .nav-link {
+        margin-bottom: 10px
+    }
+    .navbar-main-page .btn-1 {
+        margin-bottom: 12px
+    }
+    .navbar-main-page .btn-2 {
+        margin-bottom: 20px;
+        padding: 8px 28px !important
+    }
+
+    .header {
+        text-align: center
+    }
+    .header h2:after {
+        left: 0;
+        margin: auto;
+    }
+
+
+    /* Our Services */
+    .our-services {
+        text-align: center
+    }
+    .our-services .serv-title h2 {
+        margin-bottom: 30px
+    }
+    .our-services .serv-title h2:after {
+        top: 55px;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+    .our-services .serv-img-two , .serv-img-four,
+    .serv-img-six {
+        margin-bottom: 25px
+    }
+    .our-services .serv-img-one .overlay h4:after,
+    .our-services .serv-img-two .overlay h4:after,
+    .our-services .serv-img-three .overlay h4:after,
+    .our-services .serv-img-four .overlay h4:after,
+    .our-services .serv-img-five .overlay h4:after,
+    .our-services .serv-img-six .overlay h4:after,
+    .our-services .serv-img-seven .overlay h4:after,
+    .our-services .serv-img-eight .overlay h4:after {
+        right: 0;
+        left: 0;
+        margin: auto
+    }
+
+
+    /* How To Work */
+    .how-to-work {
+        text-align: center;
+        padding: 20px 0 50px 0
+    }
+    .how-to-work .sec-title h2:after {
+        left: 0;
+        margin: auto
+    }
+    .how-to-work .sec-two, .sec-four, .sec-six {
+        position: static
+    }
+
+
+    /* Our Customers */
+    .our-customers .overlay {
+        padding: 30px 0
+    }
+    .our-customers .overlay .cus-title h2 {
+        margin-bottom: 45px;
+        text-align: center
+    }
+    .our-customers .overlay .cus-title h2:after{
+        right: 0;
+        margin: auto
+    }
+    .our-customers .overlay .cus-content p {
+        font-size: 16px
+    }
+    .our-customers .overlay .cus-content {
+        padding: 0 10px
+    }
+
+
+    /* Customer Slider */
+    .customer-slider {
+        width: 474px
+    }
+    .owl-theme .owl-dots .owl-dot {
+        display: none !important
+    }
+
+
+    /* testimonials */
+    .testimonials {
+        text-align: center;
+        padding: 0 0 50px 0
+    }
+    .testimonials .testimonials-title h2:after {
+        left: 0;
+        margin: auto
+    }
+    .testimonials .carousel {
+        width: 515px
+    }
+    .testimonials p:after {
+        left: 160px
+    }
+
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding-top: 220px
+    }
+    .footer .logo {
+        margin-bottom: 20px;
+        margin-top: 20px
+    }
+    .footer .links {
+        margin-bottom: 180px
+    }
+    .footer .phones , .footer p {
+        display: none
+    }
+    .footer .hidden {
+        display: inline-block;
+        margin: auto;
+        margin-top: 20px;
+        color: #777;
+        font-weight: 600;
+        padding: 10px;
+    }
+
+    /*************************************
+    COMPLETED REQUESTES PAGE STYLES
+****************************************/
+.completed-page .modal-content {
+    width: 100%;
+    margin: auto;
+}
+    .completed-page .modal-body .popup-list-one {
+        margin-right: 110px
+    }
+    .completed-page .box a {
+        margin-top: 0;
+    }
+    .completed-page .modal-header span {
+        margin: 10px 160px 10px 10px;
+    }
+
+    /*************************************
+    CURRENTLY REQUESTES PAGE STYLES
+****************************************/
+
+.currently-page .modal-content {
+    width: 520px;
+    margin: auto
+}
+    .currently-page .modal-body .popup-list-one {
+        margin-right: 110px
+    }
+
+/*************************************
+    EDIT USER PAGE STYLES
+****************************************/
+
+.edit-user-page img {
+    width: 80px
+}
+    .edit-user-page form .form-buttons {
+        width: 100%
+    }
+    .edit-user-page form button:first-of-type {
+        /* margin-left: 10px; */
+    }
+
+    /*************************************
+    INVENT PAGE STYLES
+****************************************/
+
+  .invent-page.content .col-md-6 {
+    width: 319px;
+    margin: auto;
+  }
+  .invent-page .content h2 {
+    font-size: 25px
+  }
+  .invent-page .content .user-image i {
+    margin-top: 10px
+  }
+  .invent-page .content .title {
+    margin-right: -10px
+  }
+  .invent-page .content .buttons {
+    margin-bottom: 10px
+  }
+  .invent-page .content .buttons a:first-child {
+    margin-left: 10px
+  }
+
+            /*************************************
+    PROFILE PAGE STYLES
+****************************************/
+.profile .user-info {
+    text-align: center
+}
+.profile .user-info img {
+    margin-bottom: 10px
+}
+.profile .user-info .star-rate {
+    margin-top: -15px
+}
+    .profile .user-info #profileImage {
+        width: 100px;
+        height: 100px
+    }
+    .profile .user-info h2 {
+        font-size: 25px
+    }
+    .profile .edit-file {
+        margin-top: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .profile .work-states {
+        padding: 10px;
+        text-align: center
+    }
+    .profile .work-states p {
+        font-size: 18px
+    }
+    .profile .about p , .profile .req-info {
+        text-align: center
+    }
+
+    .profile .period {
+        text-align: center;
+        margin-top: 20px
+    }
+    .profile .req-info img {
+        /* margin-bottom: 15px */
+    }
+    .profile .req-info .location , .profile .req-info .star-rate
+    {
+        text-align: center;
+    }
+}
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+     /*************************************
+    ALL SECTIONS PAGE STYLES
+****************************************/
+    .role {
+        padding-left: 40px
+    }
+.start , .stop {
+    margin-bottom: 10px
+}
+.profile h5 {
+    text-align: center;
+}
+.pro-im {
+    text-align: left;
+}
+.profile .work-states p {
+    text-align: left;
+}
+.st {
+    margin-top: 7px !important;
+}
+.navbar .dropdown i {
+        left: 0;
+        top: 15px
+    }
+    .navbar .dropdown a {
+        margin-left: 30px;
+        margin-top: 10px
+    }
+    .navbar .dropdown-item {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+    .navbar .dropdown i.chevron {
+        left: 0;
+        top: 30px
+    }
+    .navbar .dropdown img {
+        margin-left: -10px !important;
+        margin-right: 7px
+    }
+    /* Start Navigation Bar */
+    .navbar {
+        width: 745px
+    }
+    .navbar .navbar-toggle {
+        color: #FFF;
+        padding: 5px 10px;
+        border-radius: 2px;
+        background-color: #2598c4;
+        cursor: pointer
+    }
+    .navbar .nav-item {
+        text-align: left;
+        margin-right: 10px;
+    }
+    .navbar .nav-item.talking,
+    .navbar .nav-item.help {
+        border-top: 1px solid #ddd;
+        padding: 15px 0 9px 0
+    }
+    .navbar .nav-item.help {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px
+    }
+    .navbar .nav-item.talking i,
+    .navbar .nav-item.help i {
+        float: right;
+        margin-top: 2px
+    }
+    .navbar .nav-item.talking a.nav-link,
+    .navbar .nav-item.help a.nav-link {
+        float: right;
+        margin-top: 2px;
+        margin-right: 10px;
+        font-size: 15px
+    }
+    .navbar .start {
+        margin-bottom: 10px
+    }
+    .navbar .dropdown {
+        margin-right: 60px
+    }
+    .navbar-nav .nav-link {
+        padding-right: 10px
+    }
+    .navbar .dropdown-menu {
+        position: absolute;
+        right: 0px;
+        max-width: 170px;
+        top: 60px;
+        left: 10px;
+    }
+    .navbar .dropdown-menu:after {
+        left: 120px
+    }
+
+    /* End Navigation Bar */
+
+    .header h2:after {
+        right: 0;
+        margin: auto;
+    }
+    .completed-page .box .box-image {
+        width: 130px
+    }
+.completed-page .box .box-heading h3 {
+        text-align: center
+    }
+    .our-services .serv-title h2:after {
+        right: 0;
+        margin: auto;
+    }
+
+    .how-to-work .sec-title h2:after {
+        right: 0;
+        margin: auto;
+    }
+    .testimonials .testimonials-title h2:after {
+        right: 0;
+        margin: auto;
+    }
+
+    /* Start Sidebar */
+
+    .sidebar {
+        min-height: 56px;
+        margin-bottom: 15px
+    }
+
+    .sidebar .card-header {
+        text-align: center
+    }
+
+    .sidebar .card-header i {
+        top: 20px;
+        /* left: 275px; */
+        bottom: 0;
+        margin: 0px 6px;
+        /* right: 420px; */
+    }
+
+    /* End Sidebar */
+
+    /* Start Content */
+
+    .content h2 {
+        text-align: center
+    }
+
+    /* End Content */
+
+    /* Start Footer */
+
+    footer .logo {
+        margin-bottom: 30px
+    }
+    footer .scroll-to-top i {
+        margin-bottom: 35px
+    }
+    footer .social-links i {
+        margin-left: 33px
+    }
+    footer p.start {
+        display: none
+    }
+    footer p.end {
+        font-size: 16px;
+        color: #6f6f6f;
+        font-weight: 600;
+        margin-top: 20px
+    }
+
+    /* End Footer */
+
+
+    /****************************************
+    INDEX PAGE
+    ****************************************/
+    /* Navigation Bar */
+    .navbar-main-page .fa-bars {
+        color: #FFF;
+        background-color: #2598c4;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 5px
+    }
+    .navbar-main-page button:focus {
+        outline: none
+    }
+    .navbar-main-page .navbar-nav {
+        background-color: #000;
+        z-index: 3;
+        position: relative;
+    }
+    .navbar-main-page .nav-item {
+        text-align: right
+    }
+    .navbar-main-page .nav-link {
+        margin-bottom: 10px
+    }
+    .navbar-main-page .btn-1 {
+        margin-bottom: 12px
+    }
+    .navbar-main-page .btn-2 {
+        margin-bottom: 20px;
+        padding: 8px 28px !important
+    }
+
+    .header {
+        text-align: center
+    }
+    .header h2:after {
+        left: 0;
+        margin: auto;
+    }
+
+    /* Our Services */
+    .our-services {
+        text-align: center
+    }
+    .our-services .serv-title h2 {
+        margin-bottom: 30px
+    }
+    .our-services .serv-title h2:after {
+        top: 55px;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+    .our-services .serv-img-two , .serv-img-four,
+    .serv-img-six {
+        margin-bottom: 25px
+    }
+    .our-services .serv-img-one .overlay h4:after,
+    .our-services .serv-img-two .overlay h4:after,
+    .our-services .serv-img-three .overlay h4:after,
+    .our-services .serv-img-four .overlay h4:after,
+    .our-services .serv-img-five .overlay h4:after,
+    .our-services .serv-img-six .overlay h4:after,
+    .our-services .serv-img-seven .overlay h4:after,
+    .our-services .serv-img-eight .overlay h4:after {
+        right: 0;
+        left: 0;
+        margin: auto
+    }
+
+
+    /* How To Work */
+    .how-to-work {
+        text-align: center;
+        padding: 20px 0 50px 0
+    }
+    .how-to-work .sec-title h2:after {
+        left: 0;
+        margin: auto
+    }
+    .how-to-work .sec-two, .sec-four, .sec-six {
+        position: static
+    }
+
+
+    /* Our Customers */
+    .our-customers .overlay {
+        padding: 30px 0
+    }
+    .our-customers .overlay .cus-title h2 {
+        margin-bottom: 45px;
+        text-align: center
+    }
+    .our-customers .overlay .cus-title h2:after{
+        right: 0;
+        margin: auto
+    }
+    .our-customers .overlay .cus-content p {
+        font-size: 20px
+    }
+    .our-customers .overlay .cus-content {
+        padding: 0 10px
+    }
+
+
+    /* Customer Slider */
+    .customer-slider {
+        width: 710px
+    }
+    .owl-theme .owl-dots .owl-dot {
+        display: none !important
+    }
+
+
+    /* testimonials */
+    .testimonials {
+        text-align: center;
+        padding: 0 0 50px 0
+    }
+    .testimonials .testimonials-title h2:after {
+        left: 0;
+        margin: auto
+    }
+  .testimonials .carousel {
+        width: 515px
+    }
+    .testimonials p:after {
+        left: 160px
+    }
+
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding-top: 220px
+    }
+    .footer .logo {
+        margin-bottom: 20px;
+        margin-top: -25px
+    }
+    .footer .links {
+        margin-bottom: 180px
+    }
+    .footer .phones , .footer p {
+        display: none
+    }
+    .footer .hidden {
+        display: inline-block;
+        margin: auto;
+        margin-top: 20px;
+        color: #777;
+        padding: 10px;
+        font-weight: 600
+    }
+
+        /*************************************
+    COMPLETED REQUESTES PAGE STYLES
+****************************************/
+.completed-page .modal-content {
+    width: 520px;
+    margin: auto
+}
+    .completed-page .modal-body .popup-list-one {
+        margin-right: 110px
+    }
+    .completed-page .box a {
+        margin-top: 0;
+    }
+    .completed-page .modal-header span {
+        margin: 10px 160px 10px 10px;
+    }
+
+    /*************************************
+    CURRENTLY REQUESTES PAGE STYLES
+****************************************/
+.currently-page .modal-content {
+    width: 520px;
+    margin: auto
+}
+    .currently-page .modal-body .popup-list-one {
+        margin-right: 110px
+    }
+
+                /*************************************
+    PROFILE PAGE STYLES
+****************************************/
+    .profile .user-info h2 {
+        text-align: right;
+        margin-top: 12px
+    }
+    .profile .user-info .star-rate i {
+        font-size: 23px;
+        margin-top: 12px
+    }
+    .profile .edit-file {
+        margin-top: 12px
+    }
+    .profile .work-states {
+        text-align: center;
+        padding: 10px
+    }
+    .profile .about p {
+        text-align: center
+    }
+    .profile .req-info h2 {
+        text-align: right
+    }
+    .profile .req-info img {
+        width: 85px;
+        height: 85px;
+        /* margin-left: -8px; */
+    }
+
+    .profile .req-info h2
+    {
+        text-align: left;
+    }
+    .profile-img[_ngcontent-c7] {
+    text-align: left;
+}
+    .profile .user-info p {
+        text-align: left
+    }
+
+
+
+}
+
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+     /*************************************
+    ALL SECTIONS PAGE STYLES
+****************************************/
+.start , .stop {
+    margin-bottom: 10px
+}
+.pro-im {
+    text-align: left;
+}
+.profile .work-states p {
+    text-align: left;
+}
+.st {
+    margin-top: 7px !important;
+}
+    /* Start Navigation Bar */
+    .navbar {
+        width: 965px
+    }
+
+    .navbar .navbar-toggle {
+        display: none
+    }
+
+    /* End Navigation Bar */
+.completed-page .box .box-image {
+        width: 130px
+    }
+    .completed-page .box a {
+       margin-top: 0;
+    }
+.completed-page .box .box-heading h3 {
+        text-align: center
+    }
+    /* Start Footer */
+
+    footer p.end {
+        display: none
+    }
+
+
+    /* End Footer */
+
+      /*************************************
+    PROFILE PAGE STYLES
+****************************************/
+    .profile .user-info h2 {
+        text-align: left;
+        margin-top: 12px;
+    }
+    .profile .user-info .star-rate i {
+        font-size: 23px;
+        margin-top: 12px
+    }
+    .profile .edit-file {
+        margin-top: 12px
+    }
+    .profile .work-states {
+        text-align: center;
+        padding: 10px
+    }
+    .profile .about p {
+        text-align: center
+    }
+    .profile .req-info h2 {
+        text-align: right
+    }
+    .profile .req-info img {
+        width: 85px;
+        height: 85px
+    }
+    .profile .req-info h2
+    {
+        text-align: left;
+    }
+    .profile-img[_ngcontent-c7] {
+    text-align: left;
+}
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .start , .stop {
+    margin-bottom: 10px
+}
+    .bb {
+        margin: 28px auto !important;
+    }
+    .pro-im {
+        text-align: left !important;
+    }
+    .profile .work-states p {
+        text-align: left;
+    }
+
+    /* Start Navigation Bar */
+    .navbar .navbar-toggle {
+        display: none
+    }
+
+    /* End Navigation Bar */
+
+    /* Start Footer */
+    footer {
+        padding-bottom: 10px
+    }
+
+    footer p.end {
+        display: none
+    }
+
+    footer p {
+        margin-right: 40px;
+    }
+    /* End Footer */
+
+.profile-img[_ngcontent-c7] {
+    text-align: left;
+}
+    
+    .completed-page .box .box-image i {
+        font-size: 60px
+    }
+
+
+}

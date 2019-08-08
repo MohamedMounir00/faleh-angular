@@ -1,14 +1,77 @@
+
+
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Faleh</title>
-  <base href="/">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
+  	<base href="/">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/fakeLoader.css">
+
+
+  <title>Faleh App - تطيبق فالح </title>
+
+    </head>
+  <body>
+
   <app-root></app-root>
-</body>
+    <!-- Start Overlay Loading -->
+
+    <!-- End Overlay Loading -->
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="assets/js/jquery.js"></script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap-auto-dismiss-alert@1.0.2/bootstrap-auto-dismiss-alert.min.js"></script>
+  
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+
+      <script src="assets/js/owl.carousel.min.js"></script>
+      <script src="assets/js/lightbox.js"></script>
+
+  <script>
+      lightbox.option({
+          'alwaysShowNavOnTouchDevices': false,
+          'disableScrolling': true,
+          'showImageNumberLabel' : false
+      })
+  </script>
+
+ <script src="assets/js/fakeLoader.min.js"></script>
+ <div class="fakeLoader" id="fakeLoader"></div>
+
+<script>
+    $.fakeLoader(
+        {
+          timeToHide:5000, //Time in milliseconds for fakeLoader disappear
+          zIndex:999, // Default zIndex
+          spinner:"spinner6",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
+          bgColor:"#2598c4", //Hex, RGB or RGBA colors
+        }
+    );
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135072219-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135072219-1');
+
+
+</script>
+
+
+  </body>
 </html>

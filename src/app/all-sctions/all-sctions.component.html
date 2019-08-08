@@ -1,0 +1,27 @@
+
+<div class="all-section">
+
+
+                       <h2 id="newOrder">{{'maincategories'|translate}}</h2>
+                       <div class="container-fluid">
+                         <div class="row">
+
+                           <!-- START IMAGE -->
+                           <div class="col-md-4 col-sm-6"  *ngFor="let item of categories">
+                             <div class="img" (click)="changeToSub(item.id)">
+                                 <img src="{{item.photo}}" class="img-fluid"  style="background-image: url('assets/imgs/index/logo.svg');background-repeat:no-repeat; background-size: cover; ">
+                                 <div class="overlay">
+                                   <p>{{item.name}}</p>
+                                 </div>
+                             </div>
+                           </div>
+                           <!-- END IMAGE -->
+
+                          
+                           <!-- END IMAGE -->
+
+                         </div>
+
+
+                         </div>
+                      </div>

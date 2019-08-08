@@ -1,0 +1,201 @@
+<h1>{{'register-provider'|translate}} </h1>
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert" *ngFor="let person of errors"
+dismiss-on-timeout="20">
+<strong>{{person}}</strong>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div *ngIf="error1" class="alert alert-warning alert-dismissible fade show" role="alert" dismiss-on-timeout="20">
+    <strong>{{error1}}</strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form #userForm="ngForm" novalidate (ngSubmit)="onchange()">
+    <div class="form-group">
+        <label for="name">{{'name'|translate}}</label>
+        <span style="color:red ">*</span>
+        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" required #name="ngModel"
+        [class.is-invalid]="name.invalid && name.touched" name="name" placeholder="{{'name'|translate}}"
+        [(ngModel)]="providerValue.name">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">{{'email'|translate}}</label>
+                <span style="color:red ">*</span>
+
+        <input type="email" class="form-control" id="exampleInputEmail1" required #email="ngModel"[class.is-invalid]="email.invalid && email.touched" aria-describedby="emailHelp" name="email"
+        placeholder="{{'email'|translate}}" [(ngModel)]="providerValue.email">
+    </div>
+
+    <div class="form-group">
+
+        <label for="password">{{'password'|translate}}</label>
+                <span style="color:red ">*</span>
+
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{'password'|translate}}"
+        required #password="ngModel" [class.is-invalid]="password.invalid && password.touched" name="password"
+        [(ngModel)]="providerValue.password">
+
+    </div>
+
+    <div class="form-group">
+        <label for="password_confirmation">{{'password_confirmation'|translate}}</label>
+                <span style="color:red ">*</span>
+
+        <input type="password" class="form-control" id="password_confirmation"
+        placeholder="{{'password_confirmation'|translate}}" required validateEqual="password"
+        #password_confirmation="ngModel"
+        [class.is-invalid]="password_confirmation.invalid && password_confirmation.touched"
+        name="password_confirmation" [(ngModel)]="providerValue.password_confirmation">
+
+    </div>
+
+    <div class="form-group">
+        <label for="phone">{{'phone'|translate}}</label>
+                <span style="color:red ">*</span>
+
+        <input type="number" required #phone="ngModel" 
+        [class.is-invalid]="phone.invalid && phone.touched" class="form-control" id="phone"
+        aria-describedby="phone" placeholder="{{'phone'|translate}}" [(ngModel)]="providerValue.phone"
+        name="phone">
+
+    </div>
+
+    <div class="form-group">
+        <label for="Bank_name">{{'Bank_name'|translate}}</label>
+
+        <input type="text" class="form-control" id="Bank_name" aria-describedby="Bank_name" 
+          name="Bank_name"
+        placeholder="{{'Bank_name'|translate}}" [(ngModel)]="providerValue.Bank_name">
+    </div>
+    <div class="form-group">
+        <label for="bank_account">{{'bank_account'|translate}}</label>
+
+        <input type="text" class="form-control" id="bank_account" aria-describedby="bank_account"
+       
+        name="bank_account" placeholder="{{'bank_account'|translate}}" [(ngModel)]="providerValue.bank_account">
+    </div>
+
+    <div class="form-group">
+        <label for="category">{{'categories'|translate}}</label>
+
+
+        <ng-multiselect-dropdown 
+        [placeholder]="'categories'|translate"
+        [data]="provider_categories"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event)"
+        >
+    </ng-multiselect-dropdown>
+
+</div>
+
+<div class="form-group">
+    <label for="nationality">{{'nationality'|translate}}</label>
+
+    <select class="form-control custom-select"  name="nationality"
+    [(ngModel)]="providerValue.nationality">
+    <option value="" selected>{{'nationality'|translate}}</option>
+    <option *ngFor="let t of countries" [value]="t.id"> {{t.name_ar}}</option>
+</select>
+
+</div>
+
+<div class="form-group">
+    <label for="studeyLevels">{{'studeyLevels'|translate}} </label>
+
+    <select class="form-control custom-select"  name="study_level"
+    [(ngModel)]="providerValue.study_level">
+    <option value="" selected>{{'studeyLevels'|translate}}</option>
+    <option *ngFor="let m of studey_levels" [value]="m.id"> {{m.name}}</option>
+</select>
+
+</div>
+
+
+<div class="form-group">
+    <label for="gender">{{'gender'|translate}}</label>
+
+    <select class="form-control custom-select" name="gender" [(ngModel)]="providerValue.gender">
+    <option value=""> {{'gender'|translate}}</option>
+
+    <option value="male"> {{'male'|translate}}</option>
+    <option value="female"> {{'female'|translate}}</option>
+</select>
+
+</div>
+
+<div class="form-group">
+    <label for="payment_method"> {{'payment_method'|translate}}</label>
+
+    <select class="form-control custom-select"  name="payment_method"
+    [(ngModel)]="providerValue.payment_method">
+    <option value=""> {{'payment_method'|translate}}</option>
+
+    <option value="cash"> {{'cash'|translate}}</option>
+    <option value="credit_card"> {{'credit_card'|translate}}</option>
+    <option value="cash_visa"> {{'cash_visa'|translate}}</option>
+</select>
+
+</div>
+
+<div class="form-group">
+    <label for="delivery">{{'delivery'|translate}}</label>
+
+    <select class="form-control custom-select"  name="delivery"
+    [(ngModel)]="providerValue.delivery">
+    <option value=""> {{'delivery'|translate}}</option>
+
+    <option value="0"> {{'no'|translate}}</option>
+    <option value="1"> {{'yes'|translate}}</option>
+</select>
+
+</div>
+
+
+<div class="form-group">
+    <label for="bio">{{'bio'|translate}}</label>
+
+    <textarea name="bio" class="form-control" id="bio" rows="3" name="bio" [(ngModel)]="providerValue.bio"></textarea>
+
+
+</div>
+<div class="form-group">
+    <label for="last_works">{{'last_works'|translate}}</label>
+    <textarea name="last_works" class="form-control" id="last_works" rows="3" name="last_works"
+    [(ngModel)]="providerValue.last_works"></textarea>
+
+</div>
+
+<div class="form-group">
+    <label for="facebook">{{'facebook'|translate}}</label>
+    <input type="text" class="form-control" id="facebook" aria-describedby="facebook" name="facebook"
+    placeholder="{{'facebook'|translate}}" [(ngModel)]="providerValue.facebook">
+
+</div>
+
+<div class="form-group">
+    <label for="LinkedIn">{{'LinkedIn'|translate}}</label>
+    <input type="text" class="form-control" id="LinkedIn" aria-describedby="LinkedIn" name="LinkedIn"
+    placeholder="{{'LinkedIn'|translate}}" [(ngModel)]="providerValue.LinkedIn">
+
+</div>
+
+<br>
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="placeMarker($event)" style="height: 300px">
+
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+
+
+<br>
+    <p class="led">بالتسجيل في الموقع فانك تكون موافق على الشروط و الاحكام  <a  routerLink="/terms-of-service" routerLinkActive="active1">اضغط هنا</a></p>
+
+<button type="submit" [disabled]="userForm.form.invalid" class="btn btn-primary hvr-shadow">{{'register'|translate}}</button>
+
+
+</form>
+
