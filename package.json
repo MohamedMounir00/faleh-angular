@@ -37,7 +37,7 @@
     "recordrtc": "^5.5.2",
     "rxjs": "^6.3.3",
     "rxjs-observable": "0.0.7",
-    "select2": "^4.0.6-rc.1",
+    "select2": "^4.0.6",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
